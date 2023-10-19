@@ -1,0 +1,494 @@
+.s3d {
+  &-floor {
+    display: grid;
+    grid-template-columns: var(--controller-w) auto var(--controller-w);
+    grid-template-rows: var(--s3d-header) auto var(--menu-h);
+    grid-template-areas: '. . .'
+    'info svg .'
+    'menu menu menu';
+    width: 100%;
+    height: 100%;
+    &__tabs-wrapper {
+      display: none;
+    }
+    @media screen and (max-width: 1024px) {
+      height: auto;
+      grid-template-columns: 1fr;
+      grid-template-rows: var(--s3d-header) auto min-content var(--menu-h);
+      grid-template-areas: '.'
+        'svg'
+        'info'
+        'menu';
+    }
+
+    &__svg {
+      grid-area: svg;
+      max-height: 100%;
+      width: 100%;
+      padding: 40px;
+      align-self: center;
+
+      @media screen and (max-width: 1024px) {
+        padding: 20px;
+        height: calc(100vh - var(--s3d-header) - var(--controller-h) - var(--menu-h));
+      }
+
+      use {
+        pointer-events: none;
+      }
+    }
+
+    .s3d-floor__nav {
+      p {
+        display: none;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+
+      [data-swiper-floor-list-wrapper] {
+        width: 290px;
+        overflow: hidden;
+
+        @media screen and (max-width: 1024px) {
+          width: 100px;
+        }
+
+        @media screen and (max-width: 680px) {
+          width: 60px;
+        }
+
+        .swiper-floor-list {
+          button.swiper-floor-list__slide {
+            @include font-default;
+            font-size: var(--font20);
+            line-height: 130%;
+            background: none;
+            border: none;
+            color: $flat-menu-text-color;
+            padding: 0;
+            transition: transform .25s ease-out;
+
+            @media screen and (min-width: 1023px){
+              &:hover {
+                transform: scale(1.25);
+              }
+            }
+            &.active {
+              font-size: 30px;
+              color: $color-bg-darkblue-color;
+            }
+          }
+        }
+      }
+
+      [data-current-floor] {
+        color: $flat-menu-text-color;
+        @include font-default;
+        font-size: var(--font32);
+        width: 40px;
+        text-align: center;
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+        border-radius: $btn-border-radius;
+        background: $flat-menu-btn-2-bg;
+        border: 1px solid $flat-menu-btn-2-border;
+        transition: all 0.4s ease-in-out;
+        position: relative;
+
+        @media screen and (min-width: 1023px){
+          &:hover {
+            background: $flat-menu-btn-2-bg-hover;
+            border: 1px solid $flat-menu-btn-2-border-hover;
+            transition: all .3s ease-in-out;
+
+            svg {
+              stroke: $flat-menu-btn-2-text-hover;
+              transition: all .3s ease-in-out;
+            }
+
+            .floor-list {
+              opacity: 1;
+              pointer-events: all;
+            }
+          }
+        }
+
+        svg {
+          height: var(--icon16);
+          width: var(--icon16);
+          stroke: $flat-menu-btn-2-text;
+          transition: all .3s ease-in-out;
+        }
+
+        .s3d-floor__nav-prev {
+          transform: rotate(180deg);
+        }
+
+        &[disabled] {
+          pointer-events: none;
+          background: transparent;
+          border: 1px solid $flat-disable-btn;
+
+          svg {
+            stroke: $flat-disable-btn;
+          }
+        }
+
+        .floor-list {
+          position: absolute;
+          left: 0;
+          bottom: 100%;
+          background: $floor-list-bg;
+          width: 320px;
+          z-index: 100;
+          border-radius: $btn-border-radius;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          align-content: flex-start;
+          padding: 20px;
+          gap: 4px;
+          opacity: 0;
+          pointer-events: none;
+          transition: .25s ease-out;
+
+          &__title {
+            width: 100%;
+            text-align: left;
+            font-size: var(--font20);
+            line-height: 130%;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: $floor-list-text-color;
+          }
+
+          button {
+            @include font-default;
+            width: 24px;
+            height: 24px;
+            border-radius: 8px;
+            transition: .25s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font14);
+            line-height: 130%;
+            background: transparent;
+            border-color: transparent;
+            color: $floor-list-text-color;
+
+            &.active {
+              background-color: $color-bg-darkblue-color;
+              color: $color-bg-white-color;
+            }
+
+            &:hover {
+              background-color: $flat-list-text-color;
+              color: $flat-list-bg;
+            }
+          }
+        }
+      }
+    }
+
+    &__tabs-wrapper {
+      @media screen and (max-width: 680px) {
+        position: relative;
+        width: 120px;
+        height: var(--btn);
+
+        &:hover {
+          .s3d-floor__tabs {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+            gap: 2px;
+          }
+        }
+      }
+
+      .s3d-floor__tabs-title-mob {
+        display: none;
+        text-align: center;
+        font-size: var(--font14);
+        line-height: 130%;
+        text-transform: none;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $title-dark;
+        color: $wc;
+        background: $title-dark;
+        border-radius: $btn-border-radius;
+
+        @media screen and (max-width: 680px) {
+          display: flex;
+          position: absolute;
+          bottom: 50%;
+          left: 50%;
+          transform: translate(-50%, 50%);
+        }
+      }
+
+      .s3d-floor__tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 680px) {
+          flex-direction: column-reverse;
+          opacity: 0;
+          visibility: hidden;
+          position: absolute;
+          bottom: 100%;
+          transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+          margin-bottom: 2px;
+        }
+
+        .s3d-floor__tab {
+          border-top: 1px solid $flat-menu-btn-border;
+          border-bottom: 1px solid $flat-menu-btn-border;
+          border-right: 1px solid $flat-menu-btn-border;
+          border-left: none;
+          border-radius: 0;
+          height: var(--btn);
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 16px;
+          cursor: pointer;
+          background: transparent;
+
+          @media screen and (max-width: 680px) {
+            background: $wc;
+            width: 120px;
+            border-radius: $btn-border-radius;
+          }
+
+          svg {
+            display: none;
+            height: 12px;
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media screen and (max-width: 680px) {
+              display: none;
+            }
+          }
+
+          &:first-child {
+            border-radius: $btn-border-radius 0 0 $btn-border-radius;
+            border-left: 1px solid $flat-menu-btn-border;
+
+            @media screen and (max-width: 680px) {
+              border-radius: $btn-border-radius;
+            }
+          }
+
+          &:last-child {
+            border-radius: 0 $btn-border-radius $btn-border-radius 0;
+
+            @media screen and (max-width: 680px) {
+              border-radius: $btn-border-radius;
+            }
+          }
+
+          &[data-rooms="1"] {
+            color: $flat-rooms-1-btn;
+
+            @media screen and (max-width: 680px) {
+              border-left: 1px solid $flat-rooms-1-btn;
+              border-right: 1px solid $flat-rooms-1-btn;
+              border-top: 1px solid $flat-rooms-1-btn;
+              border-bottom: 1px solid $flat-rooms-1-btn;
+            }
+
+            svg {
+              fill: $flat-rooms-1-btn;
+              stroke: $title-dark;
+            }
+
+            &.active {
+              color: $wc;
+              background: $flat-rooms-1-btn;
+              border-top: 1px solid $flat-rooms-1-btn;
+              border-bottom: 1px solid $flat-rooms-1-btn;
+              border-right: 1px solid $flat-rooms-1-btn;
+              border-left: 1px solid $flat-rooms-1-btn;
+
+              @media screen and (max-width: 680px) {
+                border-top: 1px solid $flat-rooms-1-btn;
+                border-bottom: 1px solid $flat-rooms-1-btn;
+                border-right: 1px solid $flat-rooms-1-btn;
+                border-left: 1px solid $flat-rooms-1-btn;
+              }
+            }
+          }
+
+          &[data-rooms="2"] {
+            color: $flat-rooms-2-btn;
+
+            @media screen and (max-width: 680px) {
+              border-left: 1px solid $flat-rooms-2-btn;
+              border-right: 1px solid $flat-rooms-2-btn;
+              border-top: 1px solid $flat-rooms-2-btn;
+              border-bottom: 1px solid $flat-rooms-2-btn;
+            }
+
+            svg {
+              fill: $flat-rooms-2-btn;
+              stroke: $title-dark;
+            }
+
+            &.active {
+              color: $wc;
+              background: $flat-rooms-2-btn;
+              border-top: 1px solid $flat-rooms-2-btn;
+              border-bottom: 1px solid $flat-rooms-2-btn;
+              border-right: 1px solid $flat-rooms-2-btn;
+              border-left: none;
+
+              @media screen and (max-width: 680px) {
+                border-top: 1px solid $flat-rooms-2-btn;
+                border-bottom: 1px solid $flat-rooms-2-btn;
+                border-right: 1px solid $flat-rooms-2-btn;
+                border-left: 1px solid $flat-rooms-2-btn;
+              }
+            }
+          }
+
+          &[data-rooms="3"] {
+            color: $flat-rooms-3-btn;
+
+            @media screen and (max-width: 680px) {
+              border-left: 1px solid $flat-rooms-3-btn;
+              border-right: 1px solid $flat-rooms-3-btn;
+              border-top: 1px solid $flat-rooms-3-btn;
+              border-bottom: 1px solid $flat-rooms-3-btn;
+            }
+
+            svg {
+              fill: $flat-rooms-3-btn;
+              stroke: $title-dark;
+            }
+
+            &.active {
+              color: $wc;
+              background: $flat-rooms-3-btn;
+              border-top: 1px solid $flat-rooms-3-btn;
+              border-bottom: 1px solid $flat-rooms-3-btn;
+              border-right: 1px solid $flat-rooms-3-btn;
+              border-left: none;
+
+              @media screen and (max-width: 680px) {
+                border-top: 1px solid $flat-rooms-3-btn;
+                border-bottom: 1px solid $flat-rooms-3-btn;
+                border-right: 1px solid $flat-rooms-3-btn;
+                border-left: 1px solid $flat-rooms-3-btn;
+              }
+            }
+          }
+
+          &[data-rooms="4"] {
+            color: $flat-rooms-4-btn;
+
+            @media screen and (max-width: 680px) {
+              border-left: 1px solid $flat-rooms-4-btn;
+              border-right: 1px solid $flat-rooms-4-btn;
+              border-top: 1px solid $flat-rooms-4-btn;
+              border-bottom: 1px solid $flat-rooms-4-btn;
+            }
+
+            svg {
+              fill: $flat-rooms-4-btn;
+              stroke: $title-dark;
+            }
+
+            &.active {
+              color: $wc;
+              background: $flat-rooms-4-btn;
+              border-top: 1px solid $flat-rooms-4-btn;
+              border-bottom: 1px solid $flat-rooms-4-btn;
+              border-right: 1px solid $flat-rooms-4-btn;
+              border-left: none;
+
+              @media screen and (max-width: 680px) {
+                border-top: 1px solid $flat-rooms-4-btn;
+                border-bottom: 1px solid $flat-rooms-4-btn;
+                border-right: 1px solid $flat-rooms-4-btn;
+                border-left: 1px solid $flat-rooms-4-btn;
+              }
+            }
+          }
+
+          &[data-rooms="all"] {
+            color: $bc;
+
+            @media screen and (max-width: 680px) {
+              border-left: 1px solid $bc;
+              border-right: 1px solid $bc;
+              border-top: 1px solid $bc;
+              border-bottom: 1px solid $bc;
+            }
+
+            &.active {
+              color: $wc;
+              background: $bc;
+              border-top: 1px solid $bc;
+              border-bottom: 1px solid $bc;
+              border-right: 1px solid $bc;
+              border-left: none;
+
+              @media screen and (max-width: 680px) {
+                border-top: 1px solid $bc;
+                border-bottom: 1px solid $bc;
+                border-right: 1px solid $bc;
+                border-left: 1px solid $bc;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.mobile {
+  .s3d-floor {
+    overflow-y: auto;
+    height: calc(100vh - var(--controller-h) - var(--s3d-header) - var(--menu-h) - 20px);
+    .s3d-flat__info-container {
+
+    }
+  }
+}
+
+
+.tablet.landscape {
+  .s3d-floor {
+    grid-template-rows: var(--s3d-header) 57.5% min-content var(--menu-h);
+    svg.s3d-floor__svg,
+    div.s3d-floor__svg {
+      height: 100%;
+    }
+
+  }
+}

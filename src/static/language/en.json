@@ -1,0 +1,348 @@
+{
+  "translation": {
+    "floor_list": {
+      "build": "Build {{build}}",
+      "section": "Section {{section}}"
+    },
+    "infoBox": {
+      "flyby--3--outside": "Masterplan",
+      "flyby--4--outside": "Masterplan",
+      "flyby--3--inside": "Detail View",
+      "flyby--4--inside": "Detail View",
+
+      "sold": "All apartments are sold",
+      "flatSold": "Apartment sold",
+      "flatClosed": "Sales are not open",
+      "review": "Review",
+      "review_flat": "Explore floor plan"
+    },
+
+    "title": {
+      "earth": "Earth",
+      "genplan": "Master Plan",
+      "flyby_3_outside": "Masterplan",
+      "flyby_4_outside": "Masterplan",
+      "flyby_3_inside": "Detail View",
+      "flyby_4_inside": "Detail View",
+      "favourites": "Favourites",
+      "plannings": "Plannings",
+      "map":"Trojena Map"
+    },
+
+    "load": {
+      "loading-text": "Loading",
+      "loading-text-wait": "Wait a little..."
+    },
+
+    "menu": {
+      "menu-title": "Menu",
+      "nav": {
+        "1": {
+          "nav-title": "Name",
+          "nav-subtitle": {
+            "1": "Name",
+            "2": "Name",
+            "3": "Name",
+            "4": "Name",
+            "5": "Name"
+          }
+        },
+        "2": {
+          "nav-title": "Name",
+          "nav-subtitle": {
+            "1": "Name",
+            "2": "Name",
+            "3": "Name",
+            "4": "Name",
+            "5": "Name"
+          }
+        }
+      }
+    },
+
+    "ctr": {
+      "nav": {
+        "title": "Menu 3D",
+        "genplan": "Master Plan",
+        "flyby": "Plots",
+        "flyby_1_outside": "C1",
+        "flyby_2_outside": "Azure",
+        "flyby_3_outside": "Phase 3",
+        "flyby_3_inside": "Phase 4",
+        "plannings": "Apartment types",
+        "floor": "Floor plan",
+        "floor_plans": "Floor plates",
+        "flat": "Floor plans",
+        "phases": "Phases",
+        "map": "Trojena Map"
+      },
+      "menu":{
+        "compass": {
+          "south": "S",
+          "west": "W",
+          "east": "E",
+          "north": "N"
+        },
+        "btn": {
+          "infrastructure": "Infrastructure",
+          "filter": "Selection by parameters",
+          "chooseOfApartment": "Select by apartments",
+          "chooseOfFloor": "Select by floors",
+          "repeatHelp": "?"
+        }
+      }
+    },
+
+    "Helper": {
+      "slide-0--title": "Hold and rotate",
+      "slide-1--title": "Filter",
+      "slide-2--title": "Floors or apartments",
+      "slide-3--title": "Use navigation",
+      "close": "Skip training"
+    },
+
+    "Filter": {
+      "title": "Filter",
+      "show_all": "Show all",
+      "Available": "Available",
+      "Total": "Total",
+      "list": {
+        "type": "Type",
+        "rooms": "Bedrooms",
+        "area": "Size",
+        "build": "Build",
+        "towers": "Plots",
+        "area_unit": "sqft",
+        "favourite--add": "Select",
+        "room_ns": {
+          "1": "1 bedroom",
+          "2": "2 bedrooms",
+          "3": "3 bedrooms",
+          "4": "4 bedrooms",
+          "5": "5 bedrooms",
+          "6": "6 bedrooms"
+        }
+      },
+      "range": {
+        "floor": "Floor",
+        "area": "Size",
+        "area_unit": "sqft"
+      },
+      "builds": {
+        "1": "C1",
+        "2": "RÊVE 3",
+        "3": "Azure"
+      },
+      "checkboxes": {
+        "rooms": "Bedrooms",
+        "build": "Build",
+        "type": "Type"
+      },
+      "reset": "Clean up",
+      "apply": "Apply",
+
+      "hide": "Hidden",
+      "show": "Show",
+
+      "found": "Found",
+      "from": "from",
+
+      "to": "to",
+      "not-marked-message": "This premise is not marked",
+      "openFilter": "Open filter"
+    },
+
+    "Flat": {
+      "buttons": {
+        "with": "3D",
+        "without": "2D",
+        "gallery_btn": "Gallery",
+        "showIn3d": "On 3D model",
+        "view": "View",
+        "windowView": "From window",
+        "pdf": "PDF",
+        "3dTour": "Unit VR Tour",
+        "callback--1": "Register Your Interest",
+        "callback--2": "Register Your Interest"
+      },
+      "timer": {
+        "timer-text": "There is still time to book at this price"
+      },
+      "information": {
+        "title": "Information",
+        "sale": "Status",
+        "build": "Build",
+        "number": "Unit number",
+        "area": "Size",
+        "tower": "Tower",
+        "allArea": "Total size",
+        "area_unit": "sqft",
+        "rooms": "Bedroom(s)",
+        "floor": "Floor number",
+        "price": "Price",
+        "priceText": " $",
+        "type": "Type",
+        "section": "Section"
+      },
+      "builds": {
+        "1": "REVE 1",
+        "2": "REVE 3",
+        "3": "AZURE"
+      },
+      "goToFloor": "Go to the floor plan",
+      "goToFlat": "Read more"
+    },
+
+    "Floor": {
+      "title-1": "",
+      "title-2": "floor",
+      "information": {
+        "title": "Information",
+        "build": "Build",
+        "floor": "Floor",
+        "section": "Section",
+        "all-flats": "Total apartments",
+        "free-flats": "Available"
+      },
+      "filter": {
+        "1": "1 bedroom",
+        "2": "2 bedrooms",
+        "3": "3 bedrooms",
+        "4": "4 bedrooms",
+        "5": "5 bedrooms",
+        "all": "Show all",
+        "title-mob": "Bedrooms"
+      },
+      "floor-list": "floors",
+      "goToFloor": "Go to floor"
+    },
+
+    "Plannings": {
+      "found": "Found",
+      "found--from": "from",
+      "found-flats": "flats",
+      "notFound": "But look at these apartments"
+    },
+
+    "favourite--title": "Favorites",
+    "favourite--added": "You added to a favorite",
+    "favourite--apartments": "apartments",
+    "favourite--add": "Select",
+
+    "card--link": "Read more",
+
+    "PopupFlyby": {
+      "title": "Sq.",
+      "description": "Planning is on another house. To view it on a 3D model, you need to switch to another house.",
+      "btn": "Change the angle"
+    },
+
+    "Error-popup": {
+      "title": "An error has occurred",
+      "translate-info": "You will be redirected to the 3D master plan via",
+      "link": "to the main",
+      "messages": {
+        "not-find-data": "expected data not received",
+        "not-all-required-data-received": "not received all the necessary data",
+        "invalid-url": "incorrect data in url",
+        "failed-request": "failed to load data",
+        "network-error": "network error",
+        "application-error": "application error",
+        "unknown-error": "Unknown error"
+      }
+    },
+
+    "Send-error-popup": {
+      "success": "error data successfully sent to technical support specialists",
+      "failed": "error data not saved, please notify technical support"
+    },
+
+    "slider_popup": {
+      "227": "Type MasterFly",
+      "228": "Type 5BR AB",
+      "229": "Type 4BR AB",
+      "230": "Type 4BR AB",
+      "231": "Type 4BR KS",
+      "232": "Type 4BR KS",
+      "233": "Type 4BR SJ",
+      "234": "Type 4BR SJ",
+      "235": "Type 5BR JM",
+      "236": "Type 5BR JM",
+      "239": "Type 5BR KS",
+      "240": "Type 5BR KS",
+      "241": "Type 5BR SJ",
+      "242": "Type 5BR SJ",
+      "default": "Villa"
+    },
+
+    "builds": {
+      "1": "RÊVE",
+      "2": "RÊVE",
+      "3": "Azure",
+      "4": "D",
+      "5": "E"
+    },
+
+    "rooms": {
+      "1": "1 bedroom",
+      "2": "2 bedrooms",
+      "3": "3 bedrooms",
+      "4": "4 bedrooms",
+      "5": "5 bedrooms",
+      "6": "6 bedrooms"
+    },
+
+    "rooms-abbreviation": {
+      "1": "1 BR",
+      "2": "2 BR",
+      "3": "3 BR",
+      "4": "4 BR",
+      "5": "5 BR",
+      "6": "6 BR"
+    },
+
+    "sales": {
+      "0": "Sold",
+      "1": "Available",
+      "2": "Reserve",
+      "3": "Not available"
+    },
+
+    "pins": {
+      "pin_sport_wellfit_description": "Incredible pool",
+      "pin_sport_wellfit": "Wellfit gym",
+      "pin_leisure_entertaiment_park": "Entertainment Park",
+      "pin_sport_skatepark": "Skate park",
+      "pin_children_playground": "Children’s playground",
+      "pin_leisure_amphitheater": "Amphitheater",
+      "pin_sport_footballpitch": "Football pitch",
+      "football_pitch": "Football pitch",
+      "pin_sport_basketballcourt": "Basketball court",
+      "pin_sport_padeltennis": "Padel tennis court",
+      "pin_park_park": "Park which include a swimming pool and children’s playground",
+      "pin_park_park1": "Park which include a swimming pool and children’s playground",
+      "zone_sport_jogging": "Looped jogging track",
+      "zone_sport_cycling": "Looped cycling track",
+
+      "tennis_court": "Tennis court",
+      "skate_park": "Skate Park"
+      
+    },
+
+    "loader": {
+      "load": "Loading preview",
+      "wait_a_little": "Wait a little...",
+      "rotate_warning": "Please keep the phone upright."
+    }
+  },
+  "breadcrumbs": {
+    "earth": "Earth",
+    "map": "Trojena map",
+    "flyby_3_outside": "Jouri Hills",
+    "flyby_4_outside": "Jouri Hills",
+    "flyby_3_inside": "District View",
+    "flyby_4_inside": "District View",
+    "flat": "Villa {{id}}"
+    
+  }
+}

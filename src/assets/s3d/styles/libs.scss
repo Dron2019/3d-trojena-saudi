@@ -1,0 +1,20 @@
+@import '../scripts/libs/ion.rangeSlider/css/ion.rangeSlider';
+@import '../scripts/libs/magnific-popup/magnific-popup';
+@import '../scripts/libs/tippy/tippy';
+@import '../../../../node_modules/swiper/swiper';
+@import '../../../../node_modules/swiper/modules/effect-fade/effect-fade';
+@import '../../../../node_modules/toastify-js/src/toastify';
+
+
+.toastify {
+    border-radius: $btn-border-radius;
+    @include font-default;
+    background: $color-bg-darkblue-color;
+    color: $color-bg-white-color;
+}
+
+html:not(.desktop) {
+    .toastify {
+        font-size: 12px;
+    }
+}

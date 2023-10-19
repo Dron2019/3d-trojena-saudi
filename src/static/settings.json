@@ -1,0 +1,219 @@
+{
+  "earth": {
+    "id": "earth",
+    "generalWrapId": "#js-s3d__wrapper",
+    "imageUrl": "images/flyby/masterplan/",
+    "class": "js-s3d__wrapper",
+    "breadcrumbs_level": 1
+  },
+  "map": {
+    "id": "map",
+    "generalWrapId": "#js-s3d__wrapper",
+    "imageUrl": "images/flyby/masterplan/",
+    "class": "js-s3d__wrapper",
+    "breadcrumbs_level": 2
+  },
+  "genplan": {
+    "id": "genplan",
+    "generalWrapId": "#js-s3d__wrapper",
+    "imageUrl": "images/flyby/genplan/",
+    "class": "js-s3d__wrapper",
+    "breadcrumbs_level": 3,
+    "numberSlide": {
+      "min": 0,
+      "max": 119
+    },
+    "controlPoint": [
+      10,50,80,110
+    ],
+    "activeSlide": 10,
+    "rotateSpeedDefault" : 20,
+    "rotateSpeed": [
+      {
+        "min": 79,
+        "max": 100,
+        "ms": 40
+      }
+    ],
+    "frameWithNorthDirection": 100,
+    "mouseSpeed": 1,
+    "startDegCompass": 60
+  },
+  "flyby": {
+    "breadcrumbs_level": 4,
+    "id": "flyby",
+    "1": {
+      "outside": {
+        "id": "flyby_1_outside",
+        "generalWrapId": "#js-s3d__wrapper",
+        "imageUrl": "images/flyby/site_c1/",
+        "image_format": "jpg",
+        "class": "js-s3d__wrapper",
+        "numberSlide": {
+          "min": 0,
+          "max": 119
+        },
+        "controlPoint": [
+          10,50,80,110
+        ],
+        "activeSlide": 10,
+        "rotateSpeedDefault" : 20,
+        "rotateSpeed": [],
+        "mouseSpeed": 1,
+        "startDegCompass": 90,
+        "frameWithNorthDirection": 89
+      }
+    }
+  },
+  "favourites": {
+    "id": "favourites",
+    "generalWrapId": ".js-s3d__slideModule"
+  },
+  "floor": {
+    "id": "floor",
+    "generalWrapId": ".js-s3d__slideModule",
+    "breadcrumbs_level": 5
+  },
+  "flat": {
+    "id": "flat",
+    "generalWrapId": ".js-s3d__slideModule",
+    "breadcrumbs_level": 6
+  },
+  "plannings": {
+    "id": "plannings",
+    "generalWrapId": ".js-s3d__slideModule",
+    "breadcrumbs_level": 5
+  },
+  "pin": {
+    "images": {
+      "zone_sport_jogging": "images/map.jpg",
+      "footbal-field": "images/infrastructure/footbal-field.jpg"
+    },
+    "genplan": {
+      "parking_2": "https://360.visengine.com/portfolio/sobha_vrt3/villa/#pano31/100.6/1.1/65.2"
+    },
+    "flyby": {
+      "zone_sport_jogging": "https://360.visengine.com/portfolio/sobha_vrt3/villa/#pano31/100.6/1.1/65.2",
+      "1": {
+        "outside": {
+          "pin_1": "https://360.visengine.com/portfolio/sobha_vrt3/villa/#pano31/100.6/1.1/65.2"
+        }
+      },
+      "2": {
+        "outside": {
+          "vila_vr": "https://360.visengine.com/portfolio/sobha_vrt3/villa/#pano31/100.6/1.1/65.2"
+        }
+      }
+    }
+  },
+  "infrastructure": {
+    "pin_sport_wellfit": "Wellfit gym",
+    "pin_leisure_entertaiment_park": "Entertainment Park",
+    "pin_sport_skatepark": "Skate park",
+    "pin_children_playground": "Children’s playground",
+    "pin_leisure_amphitheater": "Amphitheater",
+    "pin_sport_footballpitch": "Football pitch",
+    "pin_sport_basketballcourt": "Basketball court",
+    "pin_sport_padeltennis": "Padel tennis court",
+    "pin_park_park": "Two parks, which include a swimming pool and children’s playground",
+    "zone_sport_jogging": "Jogging track",
+    "zone_sport_cycling": "Cycling track"
+  },
+  "sliderPopup" : {
+    "233": {
+      "4BR SJ.jpg": "/wp-content/themes/3d/assets/s3d/images/plans/4BR SJ Option/4 BED ROOM VILLA.jpg",
+      "Ground Floor Plan.jpg": "/wp-content/themes/3d/assets/s3d/images/plans/4BR SJ Option/Ground Floor Plan.jpg",
+      "First Floor Plan.jpg": "/wp-content/themes/3d/assets/s3d/images/plans/4BR SJ Option/First Floor Plan.jpg"
+    }
+  },
+  "filter": {
+    "viewType": "card",
+    "checkboxes": [
+      {
+        "title": "Filter.list.rooms",
+        "type": "checkbox",
+        "needTranslation": true,
+        "translationNS": "rooms",
+        "paramaterByWhatWillBeFilter": "rooms"
+      }
+    ]
+  },
+  "betweenFlybyCustomLinks": {
+    "flyby_4_inside": "flyby_3_inside",
+    "flyby_3_inside": "flyby_4_inside",
+    "flyby_3_outside": "flyby_4_outside",
+    "flyby_4_outside": "flyby_3_outside"
+  },
+  "pinsInfo": {
+    "tennis_court": {
+      "type": "zone",
+      "title_i18n": "pins.tennis_court",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "filter_type": "tennis"
+    },
+    "skate_park": {
+      "type": "zone",
+      "title_i18n": "pins.skate_park",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "filter_type": "skate"
+    },
+    "zone_sport_jogging": {
+      "type": "zone",
+      "title_i18n": "pins.zone_sport_jogging",
+      "img": "/wp-content/themes/3d/assets/s3d/images/infrastructure/jogging-track.jpg",
+      "description_i18n": "pins.pin_sport_wellfit_description",
+      "position": "top_left",
+      "filter_type": "sport"
+    },
+    "zone_sport_cycling": {
+      "type": "zone",
+      "title_i18n": "pins.zone_sport_cycling",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "position": "bottom_left",
+      "filter_type": "sport"
+    },
+    "pin_sport_wellfit": {
+      "type": "pin",
+      "title_i18n": "pins.pin_sport_wellfit",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "filter_type": "sport"
+    },
+    "pin_park_park": {
+      "type": "zone",
+      "title_i18n": "pins.pin_park_park",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "filter_type": "park"
+    },
+    "pin_park_park1": {
+      "type": "zone",
+      "title_i18n": "pins.pin_park_park1",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "filter_type": "park"
+    },
+    "pin_sport_footballpitch": {
+      "type": "zone",
+      "title_i18n": "pins.football_pitch",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "filter_type": "football"
+    },
+    "pin_sport_basketballcourt": {
+      "type": "zone",
+      "title_i18n": "pins.pin_sport_basketballcourt",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "filter_type": "sport"
+    },
+    "pin_leisure_amphitheater": {
+      "type": "zone",
+      "title_i18n": "pins.pin_leisure_amphitheater",
+      "img": "/wp-content/themes/3d/assets/s3d/images/infrastructure/amphitheatre.jpg",
+      "filter_type": "amphi"
+    },
+    "pin_children_playground": {
+      "type": "pin",
+      "title_i18n": "pins.pin_children_playground",
+      "img": "images/infrastructure/footbal-field.jpg",
+      "filter_type": "child"
+    }
+  },
+  "project_brochure": "/wp-content/themes/3d/static/Jouri-Hills-Brochure-Final.pdf"
+}

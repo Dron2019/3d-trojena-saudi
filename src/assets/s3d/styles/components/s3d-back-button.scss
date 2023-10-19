@@ -1,0 +1,30 @@
+.s3d-back-button {
+    button {
+        border: none;
+        border-radius: 8px; 
+        background-color: $menu-bg;
+        color: $menu-elem-text-color;
+        cursor: pointer;
+        @include font-default();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.25s ease-out;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        svg {
+            margin-right: 4px;
+        }
+
+        &:hover {
+            background-color: lighten($menu-bg, 30%);
+        }
+    }
+
+}
+
+html:not(.desktop) {
+    .s3d-back-button {
+        display: none;
+    }
+}

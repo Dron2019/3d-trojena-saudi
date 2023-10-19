@@ -1,0 +1,76 @@
+.s3d-vr-pins-list {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(var(--s3d-header) + (var(--offset) * 3));
+    // width: 100%;
+    // height: 100%;
+    // background-color: rgba($color-bg-darkblue-color, 0.25);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 75vw;
+    justify-content: center;
+    z-index: 3;
+    gap: 4px;
+    &-item {
+        background-color: $color-bg-darkblue-color;
+        padding: 8px;
+        border-radius: $btn-border-radius;
+        color: $color-bg-white-color;
+        cursor: pointer;
+        position: relative;
+        width: 170px;
+        height: 100px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: color .25s ease-out;
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 50%;
+            height: 50%;
+            transform: translate(-50%,-50%);
+            transform-origin: center;
+            transform-box: fill-box;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 1;
+            transition: .25s ease-out;
+            @include coloringSvg($color-bg-white-color);
+        }
+        &:hover {
+            color: transparent;
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-close {
+        position: absolute;
+        right: calc(var(--offset) * -1);
+        top: 0;
+        transform: translate(100%, 0%);
+        @include coloringSvg('#ffffff');
+        width: 24px;
+        height: 24px;
+        background-color: $color-bg-darkblue-color;
+        border: none;
+        border-radius: calc($btn-border-radius / 2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: .25s ease-out;
+        
+    }
+    &-close:hover {
+        @include coloringSvg($color-bg-darkblue-color);
+        background-color: $color-bg-white-color;;
+    }
+}

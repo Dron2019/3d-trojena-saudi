@@ -1,0 +1,783 @@
+.s3d {
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    width: var(--btn);
+    height: var(--btn);
+    border-radius: $btn-border-radius;
+    background: $navigation-btn-bg;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    transition: background .3s ease-in;
+    cursor: pointer;
+
+    svg {
+      display: flex;
+      height: var(--icon24);
+      width: var(--icon24);
+      pointer-events: none;
+      fill: $navigation-btn-icon;
+    }
+
+    &[disabled] {
+      cursor: no-drop;
+    }
+
+    @media screen and (min-width: 1023px) {
+      &:hover {
+        background: $navigation-btn-bg-hover;
+
+        svg {
+          fill: $navigation-btn-icon-hover;
+        }
+      }
+    }
+  }
+
+  &-ctr {
+    z-index: 120;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+
+    &__nav {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      justify-content: flex-start;
+      flex-direction: column;
+      height: var(--controller-h);
+      width: var(--controller-w);
+      padding: var(--controller-padding);
+      align-items: flex-start;
+      pointer-events: painted;
+      display: none;
+      border-radius: $controller-border-radius $controller-border-radius 0 0;
+      z-index: 101;
+      background: $controller-background;
+      border: $controller-border;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: $controller-border-radius $controller-border-radius 0 0;
+        @at-root :not(.safari) & {
+          // backdrop-filter: blur(15px);
+      }
+        z-index: -1;
+      }
+      &>.s3d-ctr__option,
+      &>.s3d-nav__btn {
+        border-radius: 0;
+      }
+
+      
+      &>.s3d-nav__btn:first-of-type {
+        border-radius: 4px 4px 1px 1px;
+
+      }
+      &>.s3d-nav__btn:last-child {
+        border-radius: 1px 1px 4px 4px;
+      }
+      @media screen and (max-width: 1024px) {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 var(--offset);
+        gap: 5px;
+        border-radius: 0;
+
+        .s3d-nav {
+          padding: 0;
+          margin: 0;
+          min-width: 100px;
+        }
+
+        .s3d-ctr__option.active {
+          &:after {
+            border-top: 1px solid $controller-text-color-active;
+            border-right: 1px solid $controller-text-color-active;
+          }
+        }
+      }
+
+      @media screen and (max-width: 680px) {
+        padding: 0 4px;
+        gap: 2px;
+      }
+
+      &__title {
+        margin: 0 auto 10px 0;
+        font-family: $default-font2;
+        font-weight: 400;
+        font-size: var(--font20);
+        line-height: 130%;
+        text-align: left;
+        color: $controller-title-color;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+      }
+
+      .s3d-nav__btn {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        min-width: 128px;
+        height: var(--controller-btn);
+        margin: 1px 0;
+        padding: 0 8px;
+        border: $controller-btn-border;
+        background: $controller-btn-background;
+        border-radius: 0;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: var(--font14);
+        line-height: 130%;
+        text-align: left;
+        color: $controller-text-color;
+        white-space: nowrap;
+        flex-shrink: 0;
+
+        @media screen and (max-width: 1024px) {
+          text-align: center;
+          justify-content: center;
+        }
+
+        @media screen and (max-width: 680px) {
+          min-width: fit-content;
+          width: 20%;
+          padding: 0 3px;
+          border: none;
+
+        }
+
+        &:hover:not(.active ):not( [ disabled ] ) {
+          background: $controller-btn-background-hover;
+          border: $controller-btn-border-hover;
+          color: $controller-text-color-hover;
+        }
+
+        &.active {
+          cursor: no-drop;
+          background: $controller-btn-background-active;
+          border: $controller-btn-border-active;
+          color: $controller-text-color-active;
+        }
+
+        &[disabled] {
+          cursor: no-drop;
+          background: $controller-btn-background-disabled;
+          border: $controller-btn-border-disabled;
+          color: $controller-text-color-disabled;
+        }
+      }
+      // .s3d-nav__btn:first-of-type {
+      //   border-radius: 4px 4px 1px 1px;
+      // }
+      // .s3d-nav__btn:last-of-type {
+      //   border-radius: 1px 1px 4px 4px ;
+      // }
+
+      .s3d-ctr__option {
+        position: relative;
+
+        @media screen and (max-width: 1024px) {
+          flex-direction: column;
+          flex-wrap: nowrap;
+        }
+
+        &__buttons {
+          position: absolute;
+          top: 0;
+          right: 0;
+          transform: translate(100%, -50%);
+          visibility: hidden;
+          opacity: 0;
+          pointer-events: none;
+          padding: 0 0 0 calc(var(--controller-padding) + 20px);
+          transition: opacity 0.5s ease-in-out;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-right: 10px;
+          border-radius: 4px;
+          
+          &>:first-child {
+            border-radius: 4px 4px 1px 1px;
+          }
+          &>:last-child {
+            border-radius: 1px 1px 4px 4px;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: calc(100% - 10px);
+            height: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            @at-root :not(.safari) & {
+                // backdrop-filter: blur(15px);
+            }
+            -webkit-backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            -webkit-transform: translate3d(0,0,0);
+            -webkit-transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000;
+            transform: translate3d(0,0,0);
+            transform: translateZ(0);
+            z-index: -1;
+          }
+          @media screen and (max-width: 1024px) {
+            left: 0;
+            transform: translate(0, -105%);
+            padding: 0;
+            height: fit-content;
+
+            .s3d-nav__btn {
+              background-color: $controller-btn-background-active;
+              color: $controller-text-color-active;
+            }
+          }
+
+          .active {
+            display: none;
+          }
+        }
+
+        &:after {
+          content: '';
+          border-top: 1px solid $controller-text-color;
+          border-right: 1px solid $controller-text-color;
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%) rotate(135deg);
+          transition: all 0.4s ease-in-out;
+          height: 6px;
+          width: 6px;
+
+          @media screen and (max-width: 1024px){
+            transform: translate(0, -50%)rotate(135deg);
+          }
+
+          @media screen and (max-width: 680px) {
+            content: none;
+          }
+        }
+
+        &:focus, &:hover {
+          .s3d-ctr__option__buttons {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: painted;
+          }
+
+          &:after {
+            transform: rotate(45deg) translateY(-50%);
+            border-top: 1px solid $controller-text-color-active;
+            border-right: 1px solid $controller-text-color-active;
+
+            @media screen and (max-width: 1024px) {
+              transform: translate(0, -50%)rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+
+    &__menu-3d {
+      bottom: 0;
+      height: auto;
+      background: $navigation-bg;
+      padding: 12px calc(var(--smarto-logo-w) + 12px) 12px calc(var(--controller-w) + 12px);
+      visibility: hidden;
+      position: fixed;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      width: 100%;
+      z-index: 99;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+
+      @media screen and (max-width: 1024px) {
+        padding: var(--offset);
+        bottom: calc(var(--controller-h) - 1px);
+      }
+
+      @media screen and (max-width: 680px) {
+        padding: 4px;
+        flex-direction: column;
+      }
+
+      &-compass-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        pointer-events: none;
+        background: $compass-bg;
+        padding: $compass-padding;
+        border-radius: $btn-border-radius;
+        @media screen and (min-width: 601px){
+          transform: scale(0.75);
+          transform-origin: right 35px;
+        }
+        &>* {
+          pointer-events: all;
+        }
+
+        .s3d-ctr__menu-3d__compass-wrapper {
+          position: relative;
+          pointer-events: none;
+
+          .s3d-ctr__menu-3d__compass {
+            position: relative;
+            width: 300px;
+            height: 39px;
+            overflow: hidden;
+
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 30%;
+              height: 100%;
+              background: linear-gradient(90deg, $compass-bg 0%, rgba(255,255,255,0.5466561624649859) 50%, rgba(255,255,255,0) 100%);
+              z-index: 2;
+            }
+            &:after {
+              content: '';
+              position: absolute;
+              right: 0;
+              top: 0;
+              width: 30%;
+              height: 100%;
+              background: linear-gradient(270deg, $compass-bg 0%, rgba(255,255,255,0.5466561624649859) 50%, rgba(255,255,255,0) 100%);
+              z-index: 2;
+            }
+
+            @media screen and (max-width: 1024px) {
+              width: 200px;
+            }
+
+            @media screen and (max-width: 680px) {
+              width: 200px;
+            }
+
+            &__inner {
+              position: absolute;
+              width: auto;
+              top: 0;
+              right: 0;
+              overflow: visible;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              will-change: transform;
+
+              .compass-text {
+                @include font-default;
+                font-size: 30px;
+                text-transform: uppercase;
+                color: $compass-text-big;
+                transition: transform .1s ease;
+                align-self: center;
+                padding: 0 3px;
+
+                @media screen and (max-width: 680px){
+                  font-size: 28px;
+                }
+              }
+
+              .compass-line-big {
+                @include font-default;
+                font-size: 28px;
+                text-transform: uppercase;
+                color: $compass-text-big;
+                transition: transform .1s ease;
+                align-self: center;
+                padding: 0 3px;
+              }
+
+              .compass-line-small {
+                @include font-default;
+                font-size: 20px;
+                text-transform: uppercase;
+                color: $compass-text-small;
+                padding: 0 3px;
+                transition: transform .1s ease;
+                align-self: center;
+              }
+            }
+          }
+        }
+      }
+      &-buttons {
+        display: none;
+        width: auto;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        margin-top: 8px;
+
+        // @at-root .desktop .s3d-ctr__menu-3d-buttons .s3d-ctr__filter {
+        //   position: absolute;
+        //   right: calc(var(--offset) * 2);
+        //   bottom: calc(var(--offset) * 2);
+        // }
+        .s3d-ctr__filter {
+          z-index: 1;
+          display: none;
+          gap: 8px;
+          flex-shrink: 0;
+          @media screen and (min-width: 1023px) {
+            &:hover {
+              .s3d-ctr__filter__icon circle:nth-of-type(1) {
+                cx: 5.5;
+              }
+              .s3d-ctr__filter__icon circle:nth-of-type(2) {
+                cx: 5.5;
+              }
+              .s3d-ctr__filter__icon circle:nth-of-type(3) {
+                cx: 20.5;
+              }
+            }
+          }
+          &__text {
+            @media screen and (max-width: 680px) {
+              display: none;
+            }
+          }
+          &__icon {
+            height: var(--icon16);
+            width: var(--icon16);
+
+            @media screen and (max-width: 680px) {
+              
+            }
+
+            svg {
+              width: 100%;
+              height: 100%;
+              fill: $menu-3d-text-color-btn;
+              stroke: $menu-3d-text-color-btn;
+            }
+
+            circle {
+              transition: cx 0.5s ease-in-out;
+            }
+          }
+        }
+
+        .s3d__choose--flat {
+          position: relative;
+          padding: 12px 0px;
+          z-index: 1;
+          display: none;
+
+          &--button {
+            z-index: 1;
+            transition: background-color 0.6s ease-in-out, color 0.3s ease-in-out;
+            cursor: pointer;
+            text-align: center;
+            width: 150px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: 680px) {
+              width: 87px;
+            }
+
+            input:checked {
+              & + span {
+                color: $menu-3d-text-color-btn-checked;
+              }
+
+              @media screen and (min-width: 1023px) {
+                &:hover {
+                  & + span {
+                    cursor: no-drop;
+                  }
+                }
+              }
+            }
+
+            input:not(checked) {
+              & + span {
+                color: $menu-3d-text-color-btn;
+              }
+
+              @media screen and (min-width: 1023px) {
+                &:hover {
+                  background: $menu-3d-background-btn-hover;
+                }
+              }
+            }
+
+            span {
+              transition: color 0.3s ease-in-out;
+            }
+
+            &-bg {
+              position: absolute;
+              left: 0;
+              height: 100%;
+              width: 97px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              pointer-events: none;
+              overflow: hidden;
+              z-index: 0;
+
+              @media screen and (max-width: 680px) {
+                width: 87px;
+              }
+
+              svg {
+                height: 100%;
+                width: 200%;
+                flex: 1 0 200%;
+                fill: $menu-3d-main-color;
+              }
+            }
+          }
+        }
+
+        .s3d-ctr__theme {
+          visibility: visible;
+          transition: all 0.4s ease-in-out;
+          z-index: 1;
+          display: none;
+          padding: 0;
+
+          input[type=checkbox]{
+            height: 0;
+            width: 0;
+            visibility: hidden;
+          }
+
+          label {
+            width: 100%;
+            height: var(--btn);
+            background: transparent;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+              width: 40px;
+              height: var(--icon24);
+              fill: $menu-3d-text-color-btn;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 1;
+              cursor: pointer;
+            }
+
+            &:after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translate(0, -50%);
+              width: 40px;
+              height: 100%;
+              background: $menu-3d-main-color;
+              border-radius: $btn-border-radius;
+              transition: all 0.3s ease-in-out;
+              z-index: -1;
+            }
+          }
+
+          input:checked + label {
+            &:after {
+              left: 100%;
+              transform: translate(-100%, -50%);
+            }
+          }
+        }
+
+        .s3d-ctr__infra-button {
+          position: relative;
+          pointer-events: painted;
+          z-index: 1;
+          display: none;
+
+          &__select {
+            background: $menu-3d-text-color-btn;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 33px;
+            height: 16px;
+            margin-left: 8px;
+            border-radius: 43px;
+            padding: 2px;
+            overflow: hidden;
+            cursor: pointer;
+
+            &-circle {
+              height: 14px;
+              width: 14px;
+              border-radius: 50%;
+              background: $menu-3d-main-color;
+            }
+
+            i {
+              transform: translateX(100%);
+              transition: transform 0.4s ease-in-out;
+            }
+
+            input:checked + i {
+              transform: translateX(0);
+            }
+          }
+        }
+
+        .s3d-ctr__helper {
+          z-index: 1;
+          display: none;
+          width: var(--btn);
+        }
+
+        input {
+          display: none;
+        }
+      }
+      &-btn-style {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 16px;
+        height: var(--btn);
+        width: fit-content;
+        border: none;
+        border-radius: $btn-border-radius;
+        background: $menu-3d-background-btn;
+        @include font-default;
+        font-size: var(--font14);
+        color: $menu-3d-text-color-btn;
+        pointer-events: painted;
+        transition: all 0.3s ease-in;
+        overflow: hidden;
+        cursor: pointer;
+
+        &.btn-style-hover {
+          @media screen and (min-width: 1023px) {
+            &:hover {
+              // border: $menu-3d-border-btn-hover;
+              background: $menu-3d-background-btn-hover;
+              color: $menu-3d-text-color-btn-hover;
+              svg {
+                fill: $menu-3d-text-color-btn-hover;;
+                stroke: $menu-3d-text-color-btn-hover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.desktop {
+  // 
+  .s3d-ctr__option {
+    &__buttons {
+      &--floors {
+        top: auto; bottom: 0; transform: translate(100%, 0%);
+      }
+    }
+  }
+
+  [data-type="map"] {
+    .s3d-ctr__nav {
+      left: auto;
+      right: 0;
+    }
+  }
+
+}
+
+.mobile {
+
+  .s3d {
+    &-ctr {
+
+      &__option {
+        &__buttons {
+          &--floors {
+            left: auto;
+            right: 0;
+          }
+          &>* {
+            width: 125px !important;
+          }
+        }
+      }
+      .s3d-nav__btn {
+        font-size: 10.5px;
+        width: 10.28%;
+      }
+      &__nav {
+        justify-content: center;
+        &>.s3d-nav__btn:first-of-type {
+          border-radius: 4px 1px 1px 4px;
+    
+        }
+        &>.s3d-nav__btn:last-child {
+          border-radius: 1px 4px 4px 1px;
+        }
+      }
+    }
+  }
+  
+  [data-type="plannings"] {
+    .s3d-ctr__nav {
+      background-color: transparent;
+      border-radius: 0;
+      &:after {
+        display: none;
+      }
+    }
+  }
+  .s3d-ctr__option__buttons {
+    background: none;
+    &::after {
+      display: none;
+    }
+  }
+}
+

@@ -1,0 +1,42 @@
+{
+    "version": 1.1,
+    "tags": [
+      {
+        "name": "g",
+        "description": "My button. You should use it as in `<my-button type='alert'></mybutton>`.",
+        "attributes": [
+          {
+            "name": "data-route"
+          },
+          {
+            "name": "data-map-popup-link",
+            "values": [{"name":"palm jebel ali"},{"name":"azizi_riviera"},{"name":"azizi_park_avenue"},{"name":"azizi_creek_views"},{"name":"azizi_aliyah"},{"name":"azizi_mina"},{"name":"azizi_royal_bay"},{"name":"azizi_beach_oasis"},{"name":"azizi_vista"},{"name":"azizi_grand"},{"name":"al_furjah_comunity"},{"name":"azizi_venice"},{"name":"azizi_aura"}]
+          },
+          {
+            "name": "data-route-from",
+            "values": [{"name":"jouri-hills"}]
+          },
+          {
+            "name": "data-route-to",
+            "values": [{"name":"Rahmania Mall"},{"name":"Sharjan National Park"},{"name":"SIA"},{"name":"Sharjan Corniche"},{"name":"Al Mamzar Beach Park"},{"name":"AlQuasimmiHospital"},{"name":"CityCentreAlZahia"},{"name":"University City"},{"name":"Sharjan Masjid"},{"name":"Suyoh Mall"},{"name":"Mushrif Park"},{"name":"City Centre Al Zahia"},{"name":"Mall Of Emirates"},{"name":"Burj Al Arab"},{"name":"Burj Khalifa"},{"name":"Dubai Frame"},{"name":"DXB Airport"},{"name":"Expo City"},{"name":"Palm Jumeirah"},{"name":"Palm Jebel Ali"},{"name":"Ain Dubai"}]
+          },
+          {
+            "name": "data-landmark", 
+            "description": "My button type",
+            "values": [{"name":"Rahmania Mall"},{"name":"Sharjan National Park"},{"name":"SIA"},{"name":"Sharjan Corniche"},{"name":"Al Mamzar Beach Park"},{"name":"AlQuasimmiHospital"},{"name":"CityCentreAlZahia"},{"name":"University City"},{"name":"Sharjan Masjid"},{"name":"Suyoh Mall"},{"name":"Mushrif Park"},{"name":"Mall Of Emirates"},{"name":"Burj Al Arab"},{"name":"Burj Khalifa"},{"name":"Dubai Frame"},{"name":"DXB Airport"},{"name":"Expo City"},{"name":"Palm Jumeirah"},{"name":"Palm Jebel Ali"},{"name":"Ain Dubai"}]
+          },
+          {
+            "name": "data-project", 
+            "description": "My button type",
+            "values": [{"name":"Azizi Aura"},{"name":"Azizi Beach Oasis"},{"name":"Azizi Creek Views"},{"name":"Azizi Aliya"},{"name":"Azizi Royal Bay"},{"name":"Azizi Vista"},{"name":"Al Furjan Community"},{"name":"Azizi Grand"},{"name":"Azizi Park Avenue"},{"name":"Azizi Mina"},{"name":"Azizi Riviera"}]
+          }
+        ],
+        "references": [
+          {
+            "name": "Bootstrap buttons",
+            "url": "https://getbootstrap.com/docs/4.0/components/buttons/"
+          }
+        ]
+      }
+    ]
+  }
