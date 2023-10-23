@@ -47,6 +47,8 @@
             // height: 100%;
             width: 100%;
             height: 100%;
+            height: 100vh;
+            width: calc(100vh / 905 * 1876);
             @media screen and (max-width:1024px){
                 min-width: auto;
                 min-height: auto;

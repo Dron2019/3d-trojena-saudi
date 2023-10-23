@@ -5,10 +5,10 @@ const ratio = document.documentElement.classList.contains('mobile') ? 'xMidYMax 
 
 export default function $mapSvg(i18n) {
     return `
-    <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" fill="none" viewBox="0 0 1920 1080" preserveAspectRatio="${ratio}">
-        <image href="${window.defaultModulePath}/images/map.jpg" x="0" y="0" width="1920" height="1080"></image>
+    <svg xmlns="http://www.w3.org/2000/svg" width="1876" height="905" fill="none" viewBox="0 0 1876 905" preserveAspectRatio="${ratio}">
+        <image href="${window.defaultModulePath}/images/map.jpg" x="0" y="0" width="1876" height="905"></image>
 
-        <rect opacity="0.3" width="1920" height="1726" fill="rgb(0, 15, 44)" data-img-overlay="" style="opacity: 0; pointer-events: none"></rect>
+        <rect opacity="0.3" width="1876" height="905" fill="rgb(0, 15, 44)" data-img-overlay="" style="opacity: 0; pointer-events: none"></rect>
         <g class="group-90__Group group-90__90 js-s3d-nav__btn" data-type="genplan" transform="translate(750,350)" data-dont-make-me-active>
             <g class="group-90__Ellipse group-90__2" filter="url(#group-90__a)">
             <path fill="#fff" d="M238 87c0 68.76-25.741 35.5-94.5 35.5C74.74 122.5 0 155.76 0 87 0 23 44.24 0 113 0c68.759 0 125 18.24 125 87Z"/>
