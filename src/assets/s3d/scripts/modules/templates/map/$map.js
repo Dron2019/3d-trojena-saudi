@@ -1,6 +1,4 @@
 import { downIcon, infoIcon, leftIcon, rightIcon, upIcon } from "../../../assets/icons";
-import $infrastructureFilter from "../infrastructureFilter/$infrastructureFilter";
-import $mapSvg from "./$mapSvg";
 
 export default function $map(i18n) {
     const filterButtons = [
@@ -129,8 +127,8 @@ export default function $map(i18n) {
                     Show All
                 </button>
         </div>
-        <div class="s3d-map__map-wrapper">
-            ${$mapSvg(i18n)}
+        <div class="s3d-map__map-wrapper map" id="map">
+            
         </div>
         <div class="s3d-map__navigation">
             ${leftIcon('data-map-scroll="left"')}

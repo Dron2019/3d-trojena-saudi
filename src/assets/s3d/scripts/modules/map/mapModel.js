@@ -5,6 +5,9 @@ import useState from '../hooks/useState';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 import { $mapTutorial } from '../templates/map/$mapTutorial';
+import googleMap from '../googleMap/map';
+
+
 
 gsap.registerPlugin(ScrollToPlugin); 
 
@@ -151,17 +154,19 @@ class MapModel extends EventEmitter {
         this.$map = this.$wrapper.querySelector('.s3d-map__map-wrapper');
 
         this.pos = { top: this.$map.scrollHeight, left: 0, x: 0, y: 0 };
-        this.initMapDragScroll();
+        // this.initMapDragScroll();
         this.initFilter();
         this.pinsPositionHandler();
         this.initCloseFilterOnTouchScreens();
         // this.initMarkersHover();
         this.popup = new MapPopup();
 
-        this.routesFilter = routesFilter();
+        // this.routesFilter = routesFilter();
         window.popup = this.popup;
         this.initPopup();
         this.initMapTutorial();
+
+        this.initGoogleMap();
     }
 
     initPopup() {
@@ -349,6 +354,9 @@ class MapModel extends EventEmitter {
             if (!target) return;
             tutorialContainer.classList.remove('active');
         });
+    }
+    initGoogleMap() {
+        this.gMap = googleMap();
     }
 }
 
