@@ -23,13 +23,23 @@ const config = {
   },
   plugins: [
     new UglifyJSPlugin({
+      parallel: true,
       sourceMap: false,
       uglifyOptions: {
+        mangle: true,
+        toplevel: true,
         compress: {
-          drop_console: true
-        }
+          drop_console: true,
+        
+        },
+        output: {
+          beautify: false
+        },
+        dead_code: true,
+        unused: true,
+        reduce_vars: true
       }
-    }),
+    })
   ],
   module: {
     rules: [
@@ -51,5 +61,28 @@ const config = {
     ],
   },
 };
+
+
+/*
+
+new UglifyJSPlugin({
+        parallel: true,
+        sourceMap: true,
+        uglifyOptions: {
+          mangle: true,
+          toplevel: true,
+          compress: {
+          drop_console: true
+          },
+          output: {
+            beautify: false
+          },
+          ecma: 6,
+          dead_code: true,
+          unused: true,
+          reduce_vars: true
+        }
+      })
+*/
 
 module.exports = config;

@@ -154,6 +154,43 @@ function mockData() {
                       "latitude": "28.172762",
                       "elevation": "35.297074" 
                   }
+              },
+                {
+                  "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>From the coast</a>",
+                  "id": "10",
+                  "iconWidth": '50',
+                  "iconHeight": '20',
+                  "iconUrl": "/wp-content/themes/3d/assets/s3d/images/markers/google_map_airport.svg",
+                  "iconDarkUrl": "/wp-content/themes/3d/assets/s3d/images/markers/dark/google_map_airport.svg",
+                  "rotation": "-90.24",
+                  "coordinations": {
+                      "latitude": "29.611202",
+                      "elevation": "35.009012" 
+                  }
+              },
+                {
+                  "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>From the coast</a>",
+                  "id": "10",
+                  "iconWidth": '50',
+                  "iconHeight": '20',
+                  "iconUrl": "/wp-content/themes/3d/assets/s3d/images/markers/google_map_prtince_sultan_bin_abdulaziz_airport.svg",
+                  "iconDarkUrl": "/wp-content/themes/3d/assets/s3d/images/markers/dark/google_map_prtince_sultan_bin_abdulaziz_airport.svg",
+                  "coordinations": {
+                      "latitude": "28.375102",
+                      "elevation": "36.602792" 
+                  }
+              },
+                {
+                  "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>From the coast</a>",
+                  "id": "10",
+                  "iconWidth": '50',
+                  "iconHeight": '20',
+                  "iconUrl": "/wp-content/themes/3d/assets/s3d/images/markers/google_map_neom_bay_airport.svg",
+                  "iconDarkUrl": "/wp-content/themes/3d/assets/s3d/images/markers/dark/google_map_neom_bay_airport.svg",
+                  "coordinations": {
+                      "latitude": "27.915455",
+                      "elevation": "35.291345" 
+                  }
               }
             ]
         },
