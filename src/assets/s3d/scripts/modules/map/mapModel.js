@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 import { $mapTutorial } from '../templates/map/$mapTutorial';
 import googleMap from '../googleMap/map';
+import { BehaviorSubject } from 'rxjs';
 
 
 
@@ -149,6 +150,8 @@ class MapModel extends EventEmitter {
         super();
         this.config = config;
         this.i18n = i18n;
+
+        this.updateFsm = config.updateFsm;
         // this.$wrapper = document.querySelector('.js-s3d__wrapper__map');
         this.$wrapper = document.body;
         this.$map = this.$wrapper.querySelector('.s3d-map__map-wrapper');
@@ -166,7 +169,9 @@ class MapModel extends EventEmitter {
         this.initPopup();
         this.initMapTutorial();
 
-        this.initGoogleMap();
+        this.initGoogleMap(this.updateFsm);
+
+        console.log(config);
     }
 
     initPopup() {
@@ -355,8 +360,29 @@ class MapModel extends EventEmitter {
             tutorialContainer.classList.remove('active');
         });
     }
-    initGoogleMap() {
-        this.gMap = googleMap();
+    initGoogleMap(updateFsm) {
+        this.$map.insertAdjacentHTML('beforebegin', `
+        <div class="switch" data-google-map-theme-switch>
+        <label for="toggle">
+        <input id="toggle" class="toggle-switch" type="checkbox" checked>
+        <div class="sun-moon"><div class="dots"></div></div>
+        <div class="background"><div class="stars1"></div><div class="stars2"></div></div>
+        <div class="fill"></div>
+        </label>
+        </div>
+        `);
+        
+        const themeSwitcher = document.querySelector('[data-google-map-theme-switch] input');
+        
+        this.$googleMapTheme = new BehaviorSubject(themeSwitcher.checked ? 'light' : 'dark');
+        themeSwitcher.addEventListener('change', (evt) => {
+            this.$googleMapTheme.next(evt.target.checked ? 'light' : 'dark');
+        });
+        this.gMap = googleMap(updateFsm, this.$googleMapTheme);
+        
+        
+
+        
     }
 }
 

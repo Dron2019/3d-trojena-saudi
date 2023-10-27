@@ -351,7 +351,7 @@ export default class Earth extends EventEmitter {
 
 
     guiHelpers(scene) {
-        if (document.documentElement.dataset.mode !== 'local') return;
+        if (document.documentElement.dataset.mode !== 'local' || !window.location.href.match(/localhost/)) return;
         setTimeout(() => {
             const gui = new GUI()
             const cubeFolder = gui.addFolder('Cube')

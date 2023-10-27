@@ -3,8 +3,8 @@ import mapStyle from "./map-style";
 
 
 
-export default function googleMap() {
-  global.initMap = initMap;
+export default function googleMap(updateFsm, theme) {
+  global.initMap = initMap.bind(null, updateFsm, theme);
 
   func();
 }
@@ -42,7 +42,7 @@ maps.forEach((image) => {
 });
 
 // eslint-disable-next-line no-unused-vars
-function initMap() {
+function initMap(updateFsm, theme) {
   const gmarkers1 = [];
   //28.4600074, 49.2384203
   const center = {
@@ -68,52 +68,6 @@ function initMap() {
     styles: mapStyle()
   });
   window.googleMap = map;
-  var polygonCoords = [
-    new google.maps.LatLng(49.2384203, 28.4600074,),
-    new google.maps.LatLng(49.2385850, 28.4598870,),
-    new google.maps.LatLng(49.2391278, 28.4600104,),
-    new google.maps.LatLng(49.2391559, 28.4597287,),
-    new google.maps.LatLng(49.2395569, 28.4598146,),
-    new google.maps.LatLng(49.2398914, 28.4587305,),
-    new google.maps.LatLng(49.2402101, 28.4585212,),
-    new google.maps.LatLng(49.2404903, 28.4572388,),
-    new google.maps.LatLng(49.2405323, 28.4572173,),
-    new google.maps.LatLng(49.2405708, 28.4570617,),
-    new google.maps.LatLng(49.2406269, 28.4571100,),
-    new google.maps.LatLng(49.2407074, 28.4568578,),
-    new google.maps.LatLng(49.2411032, 28.4553017,),
-    new google.maps.LatLng(49.2413588, 28.4553822,),
-    new google.maps.LatLng(49.2418737, 28.4543252,),
-    new google.maps.LatLng(49.2421679, 28.4565466,),
-    new google.maps.LatLng(49.2414464, 28.4570725,),
-    new google.maps.LatLng(49.2415410, 28.4585856,),
-    new google.maps.LatLng(49.2409876, 28.4598519,),
-    new google.maps.LatLng(49.2409666, 28.4603349,),
-    new google.maps.LatLng(49.2410541, 28.4607534,),
-    new google.maps.LatLng(49.2412958, 28.4608070,),
-    new google.maps.LatLng(49.2412503, 28.4612041,),
-    new google.maps.LatLng(49.2409526, 28.4611194,),
-    new google.maps.LatLng(49.2399509, 28.4613447,),
-    new google.maps.LatLng(49.2398844, 28.4617268,),
-    new google.maps.LatLng(49.2395621, 28.4616088,),
-    new google.maps.LatLng(49.2393310, 28.4617161,),
-    new google.maps.LatLng(49.2394220, 28.4609649,),
-    new google.maps.LatLng(49.2387216, 28.4607395,),
-    new google.maps.LatLng(49.2386795, 28.4602459,),
-    new google.maps.LatLng(49.2384449, 28.4601344,),
-    new google.maps.LatLng(49.2384273, 28.4600110,),
-  ];
-  var polygon = new google.maps.Polygon({
-    path: polygonCoords, // Координаты
-    // strokeColor: '#FF0000',
-    strokeOpacity: 0,
-    // strokeWeight: 1.5,
-    fillColor: '#E5CDB7',
-    fillOpacity: 1
-  });
-
-  //Добавляем на карту
-  // polygon.setMap(map);
 
   const filterMarkers = function (category, categoriesArray) {
     gmarkers1.forEach((el) => {
@@ -195,8 +149,6 @@ function initMap() {
     const initedMarkers = [];
     markers.forEach((marker) => {
       const category = marker.type;
-  
-      console.log(marker);
       const mapMarker = new google.maps.Marker({
         map,
         category,
@@ -207,12 +159,23 @@ function initMap() {
         position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
       });
       mapMarker.dataId = +marker.id;
+      mapMarker.options = {
+        ...marker
+      }
       initedMarkers.push(mapMarker);
   
-      google.maps.event.addListener(mapMarker, 'click', function () {
+      google.maps.event.addListener(mapMarker, 'dblclick', function () {
         // infowindow.setContent(marker.content);
         // infowindow.open(map, mapMarker);
         // map.panTo(this.getPosition());
+        if (mapMarker.category === 'main') {
+          updateFsm({
+            type: 'flyby',
+            flyby: '1',
+            side: 'outside'
+          })
+
+        }
       });
       mapMarker.name = marker.type;
       gmarkers1.push(mapMarker);
@@ -225,8 +188,8 @@ function initMap() {
 
     const line = new google.maps.Polyline({
       path: [
-        { lat: 28.323445, lng: 34.563675},
-        { lat: 28.407671, lng: 35.530803},
+        { lat: 28.138035, lng: 35.963475},
+        { lat: 28.306324,   lng: 34.201280,},
       ],
       geodesic: true,
       strokeColor: "#000000",
@@ -238,6 +201,35 @@ function initMap() {
 
 
     console.log(map);
+
+    theme.subscribe((theme) => {
+      console.log('------------');
+      console.log(theme);
+      console.log('------------');
+
+      console.log(initedMarkers);
+
+      initedMarkers.forEach(el => {
+        switch (theme) {
+          case 'light':
+            el.setIcon(el.options.options.iconUrl);
+            break;
+          case 'dark':
+            el.setIcon(el.options.options.iconDarkUrl ? el.options.options.iconDarkUrl : el.options.options.iconUrl);
+            break;
+        
+          default:
+            break;
+        }
+      })
+
+
+      line.setOptions({
+        strokeColor: theme === 'light' ? '#000' : '#ffffff' 
+      })
+
+    })
+
     filterMarkers('main', choosedCategories);
     markersHightlight(google, map, infowindow);
     // markersHandler();

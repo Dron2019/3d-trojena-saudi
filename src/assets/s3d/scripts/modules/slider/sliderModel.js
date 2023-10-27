@@ -353,9 +353,9 @@ async uploadPictures(hd) {
   
   const self = this;
   const imageSrc = (index) => {
-    // if (window.status === 'local') {
-    //   return 'images/flyby/masterplan/';
-    // }
+    if (window.location.origin.match(/localhost/)) {
+      return 'images/flyby/masterplan/';
+    }
     if (self.theme === 'dark') {
       return 'images/flyby/SD/sd_masterplanDark/';
     }

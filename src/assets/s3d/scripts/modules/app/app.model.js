@@ -122,7 +122,7 @@ class AppModel extends EventEmitter {
         url: window.location.href
       })
     });
-    this.mapModel = new MapModel(data, i18n);
+
     this.earthModel = new Earth({
       i18n,
       ...data,

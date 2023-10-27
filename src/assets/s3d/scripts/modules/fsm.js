@@ -10,6 +10,7 @@ import FlatView from './flat/flatView';
 import FloorModel from './floor/floorModel';
 import FloorController from './floor/floorController';
 import FloorView from './floor/floorView';
+import MapModel from './map/mapModel';
 
 function fsmConfig() {
   return {
@@ -322,16 +323,15 @@ function fsm() {
         this.iteratingConfig();
       },
       map(config, i18n, change) {
-        if (!this.plannings) {
+        if (!this.map) {
+
+          this.map = new MapModel(config, i18n);
           // this.preloaderWithoutPercent.show();
-          this.plannings = new Plannings(config, i18n);
-          this.plannings.init();
+          // this.plannings = new Plannings(config, i18n);
+          // this.plannings.init();
         } else {
           // this.preloaderWithoutPercent.show();
           // this.preloaderWithoutPercent.hide();
-        }
-        if (this.filter) {
-          this.filter.reduceFilter(false);
         }
         this.changeViewBlock(this.fsm.state);
         this.iteratingConfig();
