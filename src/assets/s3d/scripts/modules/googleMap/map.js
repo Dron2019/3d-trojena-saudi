@@ -170,9 +170,7 @@ function initMap(updateFsm, theme) {
         // map.panTo(this.getPosition());
         if (mapMarker.category === 'main') {
           updateFsm({
-            type: 'flyby',
-            flyby: '1',
-            side: 'outside'
+            type: 'genplan'
           })
 
         }
@@ -203,12 +201,6 @@ function initMap(updateFsm, theme) {
     console.log(map);
 
     theme.subscribe((theme) => {
-      console.log('------------');
-      console.log(theme);
-      console.log('------------');
-
-      console.log(initedMarkers);
-
       initedMarkers.forEach(el => {
         switch (theme) {
           case 'light':

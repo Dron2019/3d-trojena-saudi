@@ -23,7 +23,12 @@ const config = {
   },
   plugins: [
     new UglifyJSPlugin({
-      sourceMap: true,
+      sourceMap: false,
+      uglifyOptions: {
+        compress: {
+          drop_console: true
+        }
+      }
     }),
   ],
   module: {
