@@ -124,8 +124,8 @@ function ControllerMenu(i18n, data) {
       <!--${$option2FlybyButtons(i18n)}-->
       ${$optionFlybyButtons(i18n)}
       ${$planningsButton(i18n)}
-      ${$floorButton(i18n)}
-      ${$flatButton(i18n)}
+      <!--${$floorButton(i18n)}-->
+      <!--${$flatButton(i18n)}-->
       <!--${$floorList(i18n)}-->
     </div>`;
 }

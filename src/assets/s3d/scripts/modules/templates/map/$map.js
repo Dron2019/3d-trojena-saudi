@@ -124,9 +124,7 @@ export default function $map(i18n) {
                         ${data.icon}
                     </button>
                 `).join('')}
-                <button data-custom-map-filter-reset class="s3d-map__custom-filter-item">
-                    Show All
-                </button>
+                ${filterButtons.length > 0 ? '<button data-custom-map-filter-reset class="s3d-map__custom-filter-item">Show All</button>' : ''}
         </div>
         <div class="s3d-map__map-wrapper map" id="map">
             ${$mapSvg(i18n)}

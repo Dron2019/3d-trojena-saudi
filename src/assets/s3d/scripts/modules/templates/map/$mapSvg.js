@@ -5,8 +5,8 @@ const ratio = document.documentElement.classList.contains('mobile') ? 'xMidYMax 
 
 export default function $mapSvg(i18n) {
     return `
-    <svg xmlns="http://www.w3.org/2000/svg" width="1876" height="905" fill="none" viewBox="0 0 1876 905" preserveAspectRatio="${ratio}">
-        <image href="${window.defaultModulePath}/images/map-light.jpg" x="0" y="0" width="1876" height="905" data-svg-map-switch data-dark="${window.defaultModulePath}/images/map-dark.jpg" data-light="${window.defaultModulePath}/images/map-light.jpg"></image>
+    <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="970" fill="none" viewBox="0 0 1920 970" preserveAspectRatio="${ratio}">
+        <image href="${window.defaultModulePath}/images/map-light.jpg" x="0" y="0" width="1920" height="970" data-svg-map-switch data-dark="${window.defaultModulePath}/images/map-dark.jpg" data-light="${window.defaultModulePath}/images/map-light.jpg"></image>
 
         <rect opacity="0.3" width="1876" height="905" fill="rgb(0, 15, 44)" data-img-overlay="" style="opacity: 0; pointer-events: none"></rect>
         <!--<g class="group-90__Group group-90__90 js-s3d-nav__btn" data-type="genplan" transform="translate(750,350)" data-dont-make-me-active>

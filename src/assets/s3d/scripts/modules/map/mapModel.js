@@ -157,7 +157,7 @@ class MapModel extends EventEmitter {
         this.$map = this.$wrapper.querySelector('.s3d-map__map-wrapper');
 
         this.pos = { top: this.$map.scrollHeight, left: 0, x: 0, y: 0 };
-        // this.initMapDragScroll();
+        this.initMapDragScroll();
         this.initFilter();
         this.pinsPositionHandler();
         this.initCloseFilterOnTouchScreens();

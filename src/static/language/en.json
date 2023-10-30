@@ -63,6 +63,7 @@
     "ctr": {
       "nav": {
         "title": "Menu 3D",
+        "earth": "Earth",
         "genplan": "Master Plan",
         "flyby": "Plots",
         "flyby_1_outside": "C1",
