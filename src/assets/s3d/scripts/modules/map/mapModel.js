@@ -171,6 +171,14 @@ class MapModel extends EventEmitter {
 
         this.initGoogleMap(this.updateFsm);
 
+        this.$googleMapTheme.subscribe(theme => {
+            console.log(theme);
+            console.log(this.$map.querySelector('[data-svg-map-switch]'));
+            const image = this.$map.querySelector('[data-svg-map-switch]');
+            image.setAttribute('href', image.dataset[theme]);
+            // this.$map.querySelector('[data-svg-map-switch]')
+        })
+
         console.log(config);
     }
 
@@ -378,7 +386,7 @@ class MapModel extends EventEmitter {
         themeSwitcher.addEventListener('change', (evt) => {
             this.$googleMapTheme.next(evt.target.checked ? 'light' : 'dark');
         });
-        this.gMap = googleMap(updateFsm, this.$googleMapTheme);
+        // this.gMap = googleMap(updateFsm, this.$googleMapTheme);
         
         
 
