@@ -310,24 +310,7 @@
     },
 
     "pins": {
-      "pin_sport_wellfit_description": "Incredible pool",
-      "pin_sport_wellfit": "Wellfit gym",
-      "pin_leisure_entertaiment_park": "Entertainment Park",
-      "pin_sport_skatepark": "Skate park",
-      "pin_children_playground": "Children’s playground",
-      "pin_leisure_amphitheater": "Amphitheater",
-      "pin_sport_footballpitch": "Football pitch",
-      "football_pitch": "Football pitch",
-      "pin_sport_basketballcourt": "Basketball court",
-      "pin_sport_padeltennis": "Padel tennis court",
-      "pin_park_park": "Park which include a swimming pool and children’s playground",
-      "pin_park_park1": "Park which include a swimming pool and children’s playground",
-      "zone_sport_jogging": "Looped jogging track",
-      "zone_sport_cycling": "Looped cycling track",
-
-      "tennis_court": "Tennis court",
-      "skate_park": "Skate Park"
-      
+      "pin_c1": "C1 Plot"
     },
 
     "loader": {

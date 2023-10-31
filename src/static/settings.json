@@ -145,11 +145,9 @@
     "flyby_4_outside": "flyby_3_outside"
   },
   "pinsInfo": {
-    "tennis_court": {
+    "pin_c1": {
       "type": "zone",
-      "title_i18n": "pins.tennis_court",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "filter_type": "tennis"
+      "title_i18n": "pins.pin_c1"
     },
     "skate_park": {
       "type": "zone",

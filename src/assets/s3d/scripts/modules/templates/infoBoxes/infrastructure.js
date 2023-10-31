@@ -26,11 +26,11 @@ function infrastructure(i18n, data) {
       ${$title}
       ${$description}
       ${$button}
-      <style data-infrastructure-clicked-style>
+      <!--<style data-infrastructure-clicked-style>
         polygon[data-id*="${data.id}"] {
           opacity: 1;
         }
-      </style>
+      </style>-->
     </div>`;
 }
 
