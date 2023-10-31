@@ -7,7 +7,8 @@ const FIND_FLAT_ID = 'findFlatId';
 const schema = {
     earth: [ { type: 'earth' } ],
     map: [ { type: 'earth' }, { type: 'map' } ],
-    flyby_3_outside: [ { type: 'earth' }, { type: 'map' }, { type: 'flyby_3_outside' } ],
+    genplan: [ { type: 'earth' }, { type: 'map' }, { type: 'genplan' } ],
+    flyby_1_outside: [ { type: 'earth' }, { type: 'map' }, { type: 'genplan' }, { type: 'flyby_1_outside' } ],
     flyby_3_inside: [ { type: 'earth' }, { type: 'map' }, { type: 'flyby_3_outside' }, {type: 'flyby_3_inside'} ],
     flyby_4_outside: [ { type: 'earth' }, { type: 'map' }, { type: 'flyby_4_outside'}],
     flyby_4_inside: [ { type: 'earth' }, { type: 'map' }, { type: 'flyby_4_outside' }, { type: 'flyby_4_inside' } ],

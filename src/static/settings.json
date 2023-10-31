@@ -24,9 +24,9 @@
       "max": 119
     },
     "controlPoint": [
-      10,50,80,110
+      6,37,75,101
     ],
-    "activeSlide": 10,
+    "activeSlide": 6,
     "rotateSpeedDefault" : 20,
     "rotateSpeed": [
       {
@@ -54,9 +54,9 @@
           "max": 119
         },
         "controlPoint": [
-          10,50,80,110
+          5,37,78,104
         ],
-        "activeSlide": 10,
+        "activeSlide": 5,
         "rotateSpeedDefault" : 20,
         "rotateSpeed": [],
         "mouseSpeed": 1,

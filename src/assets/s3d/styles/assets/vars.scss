@@ -267,7 +267,7 @@ $btn-text: #000000;
 $navigation-bg: transparent;
 $navigation-btn-bg: $color-bg-accent-color;
 $navigation-btn-icon: $color-bg-white-color;
-$navigation-btn-bg-hover: $color-bg-accent-color;
+$navigation-btn-bg-hover: rgba($color-bg-accent-color, 0.5);
 $navigation-btn-icon-hover: $color-bg-white-color;
 
 $compass-bg: #F4F8FD;
@@ -484,22 +484,3 @@ $name-project: '3d';
 }
 
 
-html:not([data-mode="local"]) {
-	--controller-w: 0;
-    --controller-h: 0;
-	.s3d-ctr__nav {
-		padding: 0;
-		overflow: hidden;
-	}
-}
-
-html:not(.desktop):not([data-mode="local"]) {
-	--controller-w: 100%;
-    --controller-h: 60px;
-	.s3d-ctr__nav {
-		padding: 0;
-		overflow: hidden;
-		opacity: 0;
-		visibility: hidden;
-	}
-}

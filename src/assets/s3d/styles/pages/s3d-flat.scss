@@ -360,14 +360,6 @@
   }
 }
 
-html.desktop:not([data-mode="local"]) {
-  .s3d-flat__info-container {
-    width: 198px;
-    bottom: 0;
-    bottom: 50%;
-    transform: translateY(50%);
-  }
-}
 
 html:not(.desktop) {
   .s3d-flat__info-container {
