@@ -36,7 +36,6 @@
 .s3d-svg__build {
   cursor: pointer;
   transition: .25s ease-out;
-  &[data-type="infrastructure"],
   &[data-type="sold"] {
     cursor: no-drop;
   }
@@ -49,7 +48,6 @@
     stroke: $color-bg-white-color;
     stroke-width: 2px;
     transition: fill .25s ease-out, stroke .25s ease-in-out;
-    stroke: transparent;
     &:hover {
       fill: rgba($color-bg-white-color, 0.25);
     }
@@ -63,7 +61,6 @@
   }
   &[data-type="flyby"]:not(.polygon__selected):hover {
     fill: rgba($color-bg-white-color, 0.25);
-    stroke: transparent;
   }
 
   // &[data-pintype="zone"] {
@@ -75,6 +72,10 @@
 
   &[data-pintype="zone"]:hover {
     fill: transparent !important;
+    polygon {
+      fill: rgba($color-bg-white-color, 0.25);
+    }
+
   }
   polygon[data-pintype="zone"]:hover {
       fill: transparent !important;
@@ -99,13 +100,14 @@ polygon[data-pintype="zone"]:hover {
 
 [data-pintype="zone"] {
   polygon {
-    pointer-events: none;
-    opacity: 0;
+    // pointer-events: none;
+    opacity: 1;
   }
   &:active,
   &:hover {
     polygon {
       opacity: 1;
+      fill: rgba($color-bg-white-color, 0.5);
     }
   }
 }
@@ -141,7 +143,6 @@ polygon[data-pintype="zone"]:hover {
 .s3d-svg__house {
   cursor: pointer;
   transition: .25s ease-out;
-  &[data-type="infrastructure"],
   &[data-type="sold"] {
     cursor: no-drop;
   }

@@ -52,7 +52,7 @@ class AppView extends EventEmitter {
     if (!isDesktop()) {
       this.handleMapTouchAction($mapWrapper);
     } else {
-      $mapWrapper.addEventListener('dblclick', this.mapFlybyLinksHandler);
+      $mapWrapper.addEventListener('click', this.mapFlybyLinksHandler);
     }
 
     document.querySelector('.s3d-header').addEventListener('click', event => {

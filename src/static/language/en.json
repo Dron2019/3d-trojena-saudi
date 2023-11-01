@@ -5,6 +5,7 @@
       "section": "Section {{section}}"
     },
     "infoBox": {
+      "flyby--1--outside": "Plot C1",
       "flyby--3--outside": "Masterplan",
       "flyby--4--outside": "Masterplan",
       "flyby--3--inside": "Detail View",
