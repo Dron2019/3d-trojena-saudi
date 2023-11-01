@@ -295,3 +295,8 @@ svg {
     transform: translateY(-52px) translateX(-30px);
   }
 }
+
+
+body[data-type="flyby"] polygon[data-type="flat"] {
+  display: none;
+}
