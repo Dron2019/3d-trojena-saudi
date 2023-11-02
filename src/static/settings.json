@@ -18,6 +18,7 @@
     "generalWrapId": "#js-s3d__wrapper",
     "imageUrl": "images/flyby/genplan/",
     "class": "js-s3d__wrapper",
+    "image_format": "jpeg",
     "breadcrumbs_level": 3,
     "numberSlide": {
       "min": 0,
@@ -47,7 +48,7 @@
         "id": "flyby_1_outside",
         "generalWrapId": "#js-s3d__wrapper",
         "imageUrl": "images/flyby/site_c1/",
-        "image_format": "jpg",
+        "image_format": "jpeg",
         "class": "js-s3d__wrapper",
         "numberSlide": {
           "min": 0,
@@ -93,7 +94,7 @@
       "parking_2": "https://360.visengine.com/portfolio/sobha_vrt3/villa/#pano31/100.6/1.1/65.2"
     },
     "flyby": {
-      "zone_sport_jogging": "https://360.visengine.com/portfolio/sobha_vrt3/villa/#pano31/100.6/1.1/65.2",
+      "pin_c1": "/wp-content/themes/3d/assets/pannellum/pannellum.htm?panorama=true&panorama=../panorama-images/С1__1_360.jpg&autoLoad=true",
       "1": {
         "outside": {
           "pin_1": "https://360.visengine.com/portfolio/sobha_vrt3/villa/#pano31/100.6/1.1/65.2"
@@ -147,7 +148,8 @@
   "pinsInfo": {
     "pin_c1": {
       "type": "zone",
-      "title_i18n": "pins.pin_c1"
+      "title_i18n": "pins.pin_c1",
+      "iframe": "/wp-content/themes/3d/assets/pannellum/pannellum.htm?panorama=true&panorama=../panorama-images/С1__1_360.jpg&autoLoad=true"
     },
     "skate_park": {
       "type": "zone",

@@ -323,11 +323,8 @@
   "breadcrumbs": {
     "earth": "Earth",
     "map": "Trojena map",
-    "flyby_3_outside": "Jouri Hills",
-    "flyby_4_outside": "Jouri Hills",
-    "flyby_3_inside": "District View",
-    "flyby_4_inside": "District View",
-    "flat": "Villa {{id}}"
+    "flyby_1_outside": "Plot C1",
+    "flat": "Plot {{id}}"
     
   }
 }

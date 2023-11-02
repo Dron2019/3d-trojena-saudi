@@ -182,7 +182,7 @@ class Svg {
 
       if (iframe) className+= ' js-s3d-flat__3d-tour';
 
-      if (img) el.dataset.img = img;
+      if (img !== undefined) el.dataset.img = img;
       if (this.i18n.exists(description_i18n)) {
         el.dataset.text = this.i18n.t(description_i18n)
       }
@@ -194,9 +194,9 @@ class Svg {
       const dataHref = iframe ? `data-href="${iframe}"` : '';
 
       const pinGroup = `
-        <g data-pinType="${type}" data-title="${this.i18n.t(title_i18n)}" data-infra-filter="${filter_type}" ${dataHref} class="${className}" data-img="${img}" data-id="${id}" data-type="infrastructure">
+        <g data-pinType="${type}" data-title="${this.i18n.t(title_i18n)}" data-infra-filter="${filter_type}" ${dataHref} class="${className}" ${img ? `data-img="${img}"` : ''}   data-id="${id}" data-type="infrastructure">
           ${type !== 'zone' ? '' : el.outerHTML}
-          <rect data-img="${img}" data-id="${id}" data-type="infrastructure" data-title="${this.i18n.t(title_i18n)}" x="${x}" y="${y}" width="${this.pinWidth}" height="${this.pinHeight}" fill="${pinFill}" data-href="${iframe}" class="${className}"></rect>
+          <rect ${img ? `data-img="${img}"` : ''} data-id="${id}" data-type="infrastructure" data-title="${this.i18n.t(title_i18n)}" x="${x}" y="${y}" width="${this.pinWidth}" height="${this.pinHeight}" fill="${pinFill}" data-href="${iframe}" class="${className}"></rect>
           <text style="pointer-events: none;" x="${x + this.pinWidth + 8}" y="${y + this.pinHeight / 1.65}">${this.i18n.t(title_i18n)}</text>
           <!--<text x="${x}" y="${y}" fill="#1A1E21">
           ${this.i18n.t(title_i18n)}

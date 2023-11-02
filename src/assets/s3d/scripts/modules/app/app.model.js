@@ -110,10 +110,10 @@ class AppModel extends EventEmitter {
       elem.preventDefault();
 
       // if ((deviceType === 'hybrid' || deviceType === 'touchOnly') && target.tagName.match(/g|rect|polygon/i)) {
-      if (target.tagName.match(/g|rect|polygon/i)) {
-        /**opening handler in touch devices will be sliderModel.js and infobox*/
-        return;
-      }
+      // if (target.tagName.match(/g|rect|polygon/i)) {
+      //   /**opening handler in touch devices will be sliderModel.js and infobox*/
+      //   return;
+      // }
       // if ()
       new Popup(elem.target.closest('.js-s3d-flat__3d-tour').getAttribute('data-href')).render();
       
