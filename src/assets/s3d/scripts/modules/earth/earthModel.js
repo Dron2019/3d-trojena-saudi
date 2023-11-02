@@ -37,7 +37,7 @@ const $mobileLink = `
         <button class="s3d-earth__mob-link-close" onclick="this.closest('.s3d-earth__mob-link').remove()">
             ${closeIcon()}
         </button>
-        <button class="js-s3d-nav__btn s3d-infoBox__link" data-type="map" onclick="setTimeout(() => {document.querySelectorAll('.s3d-earth__mob-link').forEach(el => el.remove())}, 300)">Jouri Hills</button>
+        <button class="js-s3d-nav__btn s3d-infoBox__link" data-type="map" onclick="setTimeout(() => {document.querySelectorAll('.s3d-earth__mob-link').forEach(el => el.remove())}, 300)">Trojena</button>
     </div>
 `;
 

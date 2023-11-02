@@ -322,6 +322,7 @@
   },
   "breadcrumbs": {
     "earth": "Earth",
+    "genplan":"Master Plan",
     "map": "Trojena map",
     "flyby_1_outside": "Plot C1",
     "flat": "Plot {{id}}"
