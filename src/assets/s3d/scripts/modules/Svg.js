@@ -22,19 +22,8 @@ class Svg {
     this.floorList$ = data.floorList$;
     this.fillCategories = {
       default: 'url(#image)',
-      image: 'url(#image)',
-      child: 'url(#child)',
-      sport: 'url(#sport)',
-      playground: 'url(#playground)',
-      commercial: 'url(#commercial)',
-      shop: 'url(#shop)',
-      walking: 'url(#walking)',
-      street: 'url(#street)',
-      park: 'url(#park)',
-      skate: 'url(#skate)',
-      football: 'url(#football)',
-      tennis: 'url(#tennis)',
-      amphi: 'url(#amphi)',
+      vr360: 'url(#vr360)',
+
     };
     this.pinWidth = 30;
     this.pinHeight = 30;
@@ -255,6 +244,18 @@ class Svg {
       $svg.querySelector('svg').insertAdjacentHTML('beforeend', isObject(this.pinsInfo[pinID]) ? this.definePinInfo(el) : pinGroup);
       el.remove();
     });
+
+    $svg.querySelectorAll('polygon[data-type="flyby"]').forEach(el => {
+      const points = this.normalizepolygonPoints(el.getAttribute('points'));
+      const { x, y } = center(points);
+      const pinGroup = `
+        <rect x="${x}" y="${y}" width="${this.pinWidth}" height="${this.pinHeight}" fill="${this.fillCategories.default}"></rect>
+      `;
+
+      $svg.querySelector('svg').insertAdjacentHTML('beforeend', pinGroup);
+      
+    })
+
     return $svg;
   }
 
@@ -338,47 +339,12 @@ class Svg {
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
-          <pattern id="amphi" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/amphiteatre.svg"></image>
-          </pattern>
-          <pattern id="child" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/child.svg"></image>
-          </pattern>
-          <pattern id="tennis" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/tennis.svg"></image>
-          </pattern>
-          <pattern id="football" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/football.svg"></image>
-          </pattern>
-          <pattern id="skate" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/skate.svg"></image>
-          </pattern>
-          <pattern id="park" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/park.svg"></image>
-          </pattern>
-          <pattern id="sport" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/sport.svg"></image>
+
+          <pattern id="vr360" x="0" y="0" height="1" width="1">
+            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/vr360.svg"></image>
           </pattern>
           <pattern id="image" x="0" y="0" height="1" width="1">
             <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/marker.svg"></image>
-          </pattern>
-          <pattern id="parking" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/parking.svg"></image>
-          </pattern>
-          <pattern id="playground" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/playground.svg"></image>
-          </pattern>
-          <pattern id="commercial" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/commercial.svg"></image>
-          </pattern>
-          <pattern id="shop" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/shop.svg"></image>
-          </pattern>
-          <pattern id="walking" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/walking.svg"></image>
-          </pattern>
-          <pattern id="street" x="0" y="0" height="1" width="1">
-            <image preserveAspectRatio="none" width="${this.pinWidth}" height="${this.pinHeight}"  xlink:href="${window.defaultModulePath}/images/markers/street.svg"></image>
           </pattern>
         </defs>
       </svg>

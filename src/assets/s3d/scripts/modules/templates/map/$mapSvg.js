@@ -1,6 +1,6 @@
 
 
-const ratio = document.documentElement.classList.contains('mobile') ? 'xMidYMax slice' : 'none';
+const ratio = document.documentElement.classList.contains('mobile') ? 'xMidYMax slice' : 'xMidYMid slice';
 
 
 export default function $mapSvg(i18n) {

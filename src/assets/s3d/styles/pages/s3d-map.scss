@@ -17,7 +17,7 @@
     }
     &__map-wrapper {
         width: 100vw;
-        height: 100vh;
+        height: 101vh;
         overflow: auto;
         cursor: grab;
         min-width: 100%;
@@ -47,7 +47,7 @@
             // height: 100%;
             width: 100%;
             height: 100%;
-            height: 100vh;
+            height: 101vh;
             width: calc(100vh / 970 * 1920);
             @media screen and (max-width:1024px){
                 min-width: auto;

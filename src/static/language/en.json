@@ -311,7 +311,12 @@
     },
 
     "pins": {
-      "pin_c1": "C1 Plot"
+      "pin_c1": "C1 Plot",
+      "A": "Plot A",
+      "B": "Plot B",
+      "C2": "Plot C2",
+      "D": "Plot D",
+      "E": "Plot E"
     },
 
     "loader": {

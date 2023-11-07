@@ -149,71 +149,30 @@
     "pin_c1": {
       "type": "zone",
       "title_i18n": "pins.pin_c1",
+      "filter_type": "vr360",
       "iframe": "/wp-content/themes/3d/assets/pannellum/pannellum.htm?panorama=true&panorama=../panorama-images/С1__1_360.jpg&autoLoad=true"
     },
-    "skate_park": {
+    "A": {
       "type": "zone",
-      "title_i18n": "pins.skate_park",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "filter_type": "skate"
+      "title_i18n": "pins.A"
     },
-    "zone_sport_jogging": {
+    "B": {
       "type": "zone",
-      "title_i18n": "pins.zone_sport_jogging",
-      "img": "/wp-content/themes/3d/assets/s3d/images/infrastructure/jogging-track.jpg",
-      "description_i18n": "pins.pin_sport_wellfit_description",
-      "position": "top_left",
-      "filter_type": "sport"
+      "title_i18n": "pins.B"
     },
-    "zone_sport_cycling": {
+    "C2": {
       "type": "zone",
-      "title_i18n": "pins.zone_sport_cycling",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "position": "bottom_left",
-      "filter_type": "sport"
+      "title_i18n": "pins.C2"
     },
-    "pin_sport_wellfit": {
-      "type": "pin",
-      "title_i18n": "pins.pin_sport_wellfit",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "filter_type": "sport"
-    },
-    "pin_park_park": {
+    "D": {
       "type": "zone",
-      "title_i18n": "pins.pin_park_park",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "filter_type": "park"
+      "title_i18n": "pins.D"
     },
-    "pin_park_park1": {
+    "E": {
       "type": "zone",
-      "title_i18n": "pins.pin_park_park1",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "filter_type": "park"
-    },
-    "pin_sport_footballpitch": {
-      "type": "zone",
-      "title_i18n": "pins.football_pitch",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "filter_type": "football"
-    },
-    "pin_sport_basketballcourt": {
-      "type": "zone",
-      "title_i18n": "pins.pin_sport_basketballcourt",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "filter_type": "sport"
-    },
-    "pin_leisure_amphitheater": {
-      "type": "zone",
-      "title_i18n": "pins.pin_leisure_amphitheater",
-      "img": "/wp-content/themes/3d/assets/s3d/images/infrastructure/amphitheatre.jpg",
-      "filter_type": "amphi"
-    },
-    "pin_children_playground": {
-      "type": "pin",
-      "title_i18n": "pins.pin_children_playground",
-      "img": "images/infrastructure/footbal-field.jpg",
-      "filter_type": "child"
+      "title_i18n": "pins.E"
     }
+    
   },
   "project_brochure": "https://drive.google.com/file/d/1bPVrCE-JW2ucEZF9_CXQyV7K1Rw3ALKK/view?usp=sharing"
 }
