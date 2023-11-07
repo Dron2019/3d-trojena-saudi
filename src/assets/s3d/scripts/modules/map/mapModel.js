@@ -170,13 +170,19 @@ class MapModel extends EventEmitter {
         this.initMapTutorial();
 
         this.initGoogleMap(this.updateFsm);
+        this.themeSwitcher = document.querySelector('[data-google-map-theme-switch]');
 
         this.$googleMapTheme.subscribe(theme => {
-            console.log(theme);
-            console.log(this.$map.querySelector('[data-svg-map-switch]'));
+
             const image = this.$map.querySelector('[data-svg-map-switch]');
+            this.themeSwitcher.style.pointerEvents = 'none';
+            image.addEventListener('load', (evt) => {
+                document.body.style.opacity = Math.random() * 10;
+                this.themeSwitcher.style.pointerEvents = '';
+            }, {
+                once: true
+            });
             image.setAttribute('href', image.dataset[theme]);
-            // this.$map.querySelector('[data-svg-map-switch]')
         })
 
         console.log(config);
