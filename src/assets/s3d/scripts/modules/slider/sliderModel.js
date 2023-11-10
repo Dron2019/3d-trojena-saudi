@@ -383,7 +383,12 @@ async uploadPictures(hd) {
 
   this.preloader.miniOn();
 
-  this.loadSingleImage(`${defaultModulePath}/${imageSrc(this.activeElem)}${this.activeElem}.${self.image_format}`);
+  this.loadSingleImageAndRenderIt(`${defaultModulePath}/${imageSrc(this.activeElem)}${this.activeElem}.${self.image_format}`);
+
+
+  this.controlPoint.forEach(async (keyframe) => {
+    await this.loadSingleImage(`${defaultModulePath}/${imageSrc(keyframe)}${keyframe}.${self.image_format}`, keyframe);
+  });
 
 
   const screenRatio = window.innerHeight / window.innerWidth;
@@ -887,6 +892,7 @@ async uploadPictures(hd) {
     this.updateHorizontalCompass(this.activeElem);
 
     if (this.wrapperSvg) {
+      console.log(this.arrayBase64Images[this.activeElem]);
       this.wrapperSvg.setAttribute('src', this.arrayBase64Images[this.activeElem]);
     }
     // this.ctx.drawImage(this.arrayImages[this.activeElem], 0, 0, this.width, this.height);
@@ -1019,7 +1025,14 @@ async uploadPictures(hd) {
     });
   };
 
-  async loadSingleImage(url) {
+  async loadSingleImage(url, index) {
+    const response = await axios.get(url, { responseType: 'blob' });
+    // const img = new Image();
+    // img.src = URL.createObjectURL(response.data);
+    this.arrayBase64Images[index] = URL.createObjectURL(response.data);
+  }
+
+  async loadSingleImageAndRenderIt(url) {
     const response = await axios.get(url, { responseType: 'blob' });
     this.resizeCanvas();
     const img = new Image();
@@ -1033,7 +1046,7 @@ async uploadPictures(hd) {
   }
 
   async uploadNew(urls, progressElement, onLoadFirstKeyFrame = () => {}) {
-    
+    const self = this;
     const startLoadTime = new Date().getTime();
     this.preloaderWithoutPercent.hide();
       let total = '';
