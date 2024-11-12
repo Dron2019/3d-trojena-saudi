@@ -350,14 +350,36 @@
   }
 }
 
-.touchOnly {
+
+
+
+.deviceType_hybrid.primaryInput_touch:not(.primaryInput_mouse),
+.deviceType_touchOnly.primaryInput_touch:not(.primaryInput_mouse) {
+  .s3d-infoBox__general, .s3d-infoBox__sold, .s3d-infoBox__sale-close, .s3d-infoBox__flatSold, .s3d-infoBox__infrastructure {
+    padding-right: 40px;
+  }
   .s3d-infoBox {
     top: auto;
     bottom: 0;
     transform: translateX(-50%);
     // transform: translateX(50%);
+    bottom: 50%;
+    transform: translateX(-50%) translateY(50%);
+    left: 50%;
     &__close {
       z-index: 150;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      height: var(--btn);
+      width: var(--btn);
+      align-items: center;
+      justify-content: center;
+      // background: white;
+    }
+    .s3d-infoBox__link {
+      display: flex;
     }
     &__image {
       width: 100%;

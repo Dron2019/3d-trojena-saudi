@@ -731,6 +731,17 @@
 
 }
 
+
+.tablet {
+  .s3d {
+    &-ctr {
+      .s3d-nav__btn {
+        width: auto;
+        flex-grow: 1;
+      }
+    }
+  }
+}
 .mobile {
 
   .s3d {

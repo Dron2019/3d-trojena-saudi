@@ -35,7 +35,7 @@ import header from './modules/templates/header/header';
 import menu from './modules/templates/header/menu';
 import './modules/templates/header/header-animation';
 import dispatchTrigger from './modules/helpers/triggers';
-import { deviceType } from 'detect-it';
+import { deviceType, primaryInput } from 'detect-it';
 import { detect } from 'detect-browser';
 import $map from './modules/templates/map/$map';
 import $earth from './modules/templates/earth/$earth';
@@ -44,6 +44,32 @@ const browser = detect();
 
 
 document.documentElement.classList.add(deviceType);
+
+
+{
+  if (window.screen.height === 1366 && window.screen.width === 1024 && /Macintosh/.test(window.navigator.userAgent)) {
+    document.documentElement.classList.add('tablet');
+    document.documentElement.classList.remove('desktop');
+  }
+  if (window.screen.width === 1366 && window.screen.height === 1024 && /Macintosh/.test(window.navigator.userAgent)) {
+    document.documentElement.classList.add('tablet');
+    document.documentElement.classList.remove('desktop');
+  }
+}
+{
+  const ipadProDetectExpression = /OS X|OSX/i;
+  const biggerSide = Math.max.apply(null, [window.innerWidth, window.innerHeight]);
+  if (
+    biggerSide < 1380 &&
+    biggerSide > 1024 &&
+    document.documentElement.classList.contains('desktop') &&
+    deviceType !== 'mouseOnly' &&
+    window.navigator.userAgent.match(ipadProDetectExpression)
+  ) {
+    document.documentElement.classList.remove('desktop');
+    document.documentElement.classList.add('tablet');
+  }
+}
 
 Object.values(browser).forEach(el => document.documentElement.classList.add(el.replace(/ /g, '')));
 
@@ -57,6 +83,9 @@ window.defaultProjectPath = `/wp-content/themes/${window.nameProject}`;
 window.defaultModulePath = `/wp-content/themes/${window.nameProject}/assets/s3d`;
 window.defaultStaticPath = `/wp-content/themes/${window.nameProject}/static`;
 window.status = location.hostname.match(/localhost/) || document.documentElement.dataset.mode === 'local' ? 'local' : 'dev';
+
+document.documentElement.classList.add(`deviceType_${deviceType}`);
+document.documentElement.classList.add(`primaryInput_${primaryInput}`);
 
 global.gsap = gsap;
 global.ScrollTrigger = ScrollTrigger;

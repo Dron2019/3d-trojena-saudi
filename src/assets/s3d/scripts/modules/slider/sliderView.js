@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { deviceType, primaryInput } from 'detect-it';
 import EventEmitter from '../eventEmitter/EventEmitter';
 // import Svg from '../Svg';
 
@@ -28,8 +29,10 @@ class SliderView extends EventEmitter {
 
     // attach listeners to HTML controls
     this.wrapper.on('mouseleave', () => {
-      if (window.matchMedia('(max-width: 1024px)').matches) return;
-      this.emit('disableInfoBox');
+      if (deviceType !== 'hybrid' && deviceType !== 'touchOnly' && primaryInput === 'mouse') {
+        this.emit('disableInfoBox');
+      }
+      // if (window.matchMedia('(max-width: 1024px)').matches) return;
     })
     this.wrapper.on('mousedown', event => {
       this.emit('mouseKeyDown', event);

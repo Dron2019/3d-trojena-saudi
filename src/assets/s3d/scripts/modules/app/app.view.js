@@ -49,11 +49,12 @@ class AppView extends EventEmitter {
     
 
     const $mapWrapper = document.querySelector('.js-s3d__wrapper__map');
-    if (!isDesktop()) {
-      this.handleMapTouchAction($mapWrapper);
-    } else {
-      $mapWrapper.addEventListener('click', this.mapFlybyLinksHandler);
-    }
+    $mapWrapper.addEventListener('click', this.mapFlybyLinksHandler);
+    // if (!isDesktop()) {
+    //   this.handleMapTouchAction($mapWrapper);
+    // } else {
+    //   $mapWrapper.addEventListener('click', this.mapFlybyLinksHandler);
+    // }
 
     document.querySelector('.s3d-header').addEventListener('click', event => {
       const target = delegateHandler('.js-s3d-nav__btn', event);

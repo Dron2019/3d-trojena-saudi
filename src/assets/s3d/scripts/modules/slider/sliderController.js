@@ -1,12 +1,13 @@
 import { isDevice } from '../checkDevice';
-import { deviceType } from 'detect-it';
+import device from 'current-device';
+import { deviceType, primaryInput } from 'detect-it';
 
 class SliderController {
   constructor(model, view) {
     this._model = model;
     this._view = view;
 
-    if (deviceType === 'hybrid' || deviceType === 'touchOnly') {
+    if (primaryInput !== 'mouse') {
       view.on('touchPolygon', event => { model.touchPolygonMobileHandler(event); });
     } else {
       view.on('mouseKeyDown', event => model.sliderRotateStart(event));

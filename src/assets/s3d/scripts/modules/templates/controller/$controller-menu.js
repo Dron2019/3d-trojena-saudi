@@ -88,6 +88,7 @@ function ControllerMenu(i18n, data) {
         acc[el.build+'_'+el.section] = { ...el };
         return acc;
       }, {});
+      if (!document.querySelector(`[${attributeForThisContainer}]`)) return;
 
       document.querySelector(`[${attributeForThisContainer}]`).innerHTML = Object.values(floorsOfEverySection).map(({build,section,floor}) => {
         return `

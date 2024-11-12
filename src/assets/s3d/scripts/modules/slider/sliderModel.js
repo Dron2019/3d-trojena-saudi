@@ -535,7 +535,6 @@ async uploadPictures(hd) {
       
       
     }
-    console.log(this.hd_url);
   }
 
   enableFlatInfoBoxOnDestopTouchDevices(event) {
@@ -892,7 +891,6 @@ async uploadPictures(hd) {
     this.updateHorizontalCompass(this.activeElem);
 
     if (this.wrapperSvg) {
-      console.log(this.arrayBase64Images[this.activeElem]);
       this.wrapperSvg.setAttribute('src', this.arrayBase64Images[this.activeElem]);
     }
     // this.ctx.drawImage(this.arrayImages[this.activeElem], 0, 0, this.width, this.height);
@@ -1091,11 +1089,7 @@ async uploadPictures(hd) {
         loadedSize += urlSize;
         progressElement.textContent = Math.min(100, (100 * loadedSize / total).toFixed(0));
         
-        console.log(this);
 
-
-
-        console.log(index);
         const img = new Image();
         const imgAsBase64 = await this.blobToBase64(response.data);
         img.src = imgAsBase64;
